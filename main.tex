@@ -197,12 +197,79 @@ La aplicación web va a ser desarrollada en HTML y CSS, dado que son el estánda
 \subsection{Diseño del sistema}
 %Diagramas arquitecturales (de módulos, de componentes y conectores, de distribución), patrones de diseño y estilos arquitecturales que se aplicarán. Las interfaces (de módulos y de componentes) son especialmente importantes. También lo son los protocolos de comunicación entre componentes.
 
+\subsubsection{Diagramas arquitecturales}
 %Tecnologías elegidas (lenguajes de programación, componentes que se integrarán, API web externas con las que se conectará etc.).
+
+\subsubsection{Tecnologías elegidas}
+
+El proyecto se va a desarrollar con diferentes lenguajes de programación, esto se hace para aprovechar las 
+fortazalezas de cada uno en su campo de aplicación así como la experiencia disponible en el equipo de desarrollo.
+
+
+\paragraph*{Aplicación Web}
+
+Está dividida en vista y controlador, el modelo del juego estará implementada en el backend, 
+la lógica de la interfaz web será implementada con JavaScript nativo en todos los navegadores. 
+La interfaz será implementada con las tecnologías tradicionales web, HTML y CSS.
+
+\paragraph*{Aplicación Android}
+El desarrollo de aplicaciones Android nativo, se puede realizar mediante dos tecnologías:
+
+\begin{itemize}
+    \item Java
+    \item Kotlin
+\end{itemize}
+
+Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Android que con Kotlin, y realizar 
+el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
+posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
+
+\paragraph*{RESTful API}
+
+Para este componente se han barajado distintas opciones, ya que no está tan marcado por la plataforma sobre la que se despliega como los componentes de la interfaz.
+\begin{itemize}
+    \item Java, es uno de los lenguajes más utilizados en backend, existe familiaridad en el equipo con el aunque es un lenguaje con mucha verbosidad, requiere
+        de una máquina virtual para su ejecución. Así mismo las implementaciones nativas de servidores web requieren del despliegue de un servidor en Tomcat con
+        las implicaciones que pueda tener.
+    \item Golang, un lenguaje relativamente novedoso, ampliamente utilizado por empresas trabajando en desarrollo de tecnologías en la nube, es un lenguaje 
+        compilado, por lo que no requiere de una máquina virtual, y a su vez posee unas librerías estandar pensadas para el desarrollo de aplicaciones que 
+        necesitan conectividad, además el equipo de desarrollo también tiene experiencia en él.
+\end{itemize}
+
+Debido a que es necesario el diseño y desarrollo de una API RESTful en poco tiempo y se posee el mismo conocimiento en ambos, se ha decidido utilizar Golang ya que su librería estándar presenta grandes facilidades a la hora de crear servicios web y su despliegue consiste en ejecutar el binario creado.
+
+\paragraph*{Servidor Web}
+
+Como servidor web tras la elección de Golang como lenguaje para la API se nos presentan dos opciones:
+
+\begin{itemize}
+    \item Un servidor web tradicional como NGINX o Apache.
+    \item Creación de nuestro propio servidor.
+\end{end}
+
+Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
+máquina física.
+
+
+\paragraph*{Base de datos}
+
+En primer lugar se ha tenido que decidir entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
+SQL, ni la necesidad del escalado que ofrecen las NoSQL, se ha optado por la opción más familiar, una base de datos relacional tradicional.
+
+La implementación a elegir:
+
+\begin{itemize}
+    \item PostrgeSQL
+    \item MySQL
+\end{itemize}
+
+Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor experiencia y es ampliamente usada en servicios en producción.
+
+
 
 %Otros aspectos técnicos de interés (p.ej. si hay base de datos si va a ser SQL o NoSQL, si hay una API Web va a ser REST[ful] o no, si algunas de las operaciones van a ser asíncronas o no, si va a ser una aplicación móvil o de escritorio será nativa o se van a usar tecnologías web, cómo se van a considerar los requisitos de seguridad o de prestaciones, cómo y dónde se harán las instalaciones y despliegues etc.)
 
 %Hay que justificar todas las decisiones de diseño. Esto exige contestar a dos preguntas sobre cada decisión: ¿qué alternativas se barajaron? y ¿por qué se eligió una y no las otras?
-
 
 \appendix
 \section{Reglamento del Guiñote}

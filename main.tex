@@ -96,7 +96,7 @@ Pese a que estén definidos los grupos y los integrantes de cada uno de estos, d
 \subsection{Director del proyecto}
 El director del proyecto elegido por el grupo es Javier Herrer, mediante una votación improvisada con resultado unánime.
 
-\subsectioin{Actas de reunión}
+\subsection{Actas de reunión}
 El encargado de la realización de las actas de las diferentes reuniones llevadas a cabo y de futuras reuniones es Mario Chavanel.
 
 \subsection{Memoria}
@@ -135,7 +135,7 @@ Cuando un colaborador complete una tarea asignada, unirá sus cambios con la ram
 \subsubsection{Procesos técnicos}
 
 \subsubsection{Redacción de memorias y documentación}
-Para el desarrollo de la memoria del proyecto y de todo el resto de documentos empleados se empleará el lenguaje de LaTeX, ya que se trata de una lenguaje orientado a la creación de documentos escritos, y proporciona una alta calidad tipográfica.
+Para el desarrollo de la memoria del proyecto y de todo el resto de documentos empleados se empleará el lenguaje de \LaTeX, ya que se trata de una lenguaje orientado a la creación de documentos escritos, y proporciona una alta calidad tipográfica.
 Debido a la elección de este lenguaje, se trabaja sobre ficheros '.tex' directamente, empleando GitHub para el trabajo colaborativo, al igual que con el resto del código del proyecto. El compilador empleado para generar los ficheros PDF es MikTex.
 
 \subsubsection{Empleo de GitHub}
@@ -208,20 +208,20 @@ La aplicación web va a ser desarrollada en HTML y CSS, dado que son el estánda
 \section{Reglamento del Guiñote}
 Fuente: \href{https://www.ludoteka.com/clasika/guinote.html}{Ludoteka.com}
 
-\subsection{Origen e historia}
+\subsection*{Origen e historia}
 El Guiñote es un juego de baraja española perteneciente a la amplia familia del tute, juegos en los que se trata de ir consiguiendo bazas, con un palo dominante o palo de triunfo. El guiñote está especialmente arraigado en Aragón y algunas zonas de Navarra y Castilla.
 
-\subsection{Descripción}
+\subsection*{Descripción}
 Se trata de un juego de baraja española de 40 cartas. Se juega entre cuatro personas, formando dos parejas. Dado que las reglas son en muchos aspectos muy similares a las del Tute, en la explicación de las mismas se harán referencias a este último juego.
 
-\subsection{Objetivo}
+\subsection*{Objetivo}
 El objetivo general del juego es conseguir ganar antes que la pareja rival el número de <<cotos>> pactado inicialmente, cotos constituidos a su vez por el 3 puntos/manos ganadoras. El objetivo concreto para ganar cada una de esas manos es sumar el mayor número de puntos posible con las cartas ganadas en cada baza para superar los 100 tantos necesarios para ganarla. Habrá que intentar llevarse un gran número de bazas que reúnen cartas con la puntuación más alta posible. A estos efectos el valor de cada carta es el que sigue: As (11 puntos), Tres (10 puntos), Rey (4 puntos), Sota (3 puntos) y Caballo (2 puntos). El resto de cartas no tienen valor puntuable.
 
 Existe una jerarquía entre las cartas de un mismo palo de cara a saber cuál es la carta que vence en cada una de las bazas. Es la siguiente, de mayor a menor: As, Tres, Rey, Sota, Caballo, Siete, Seis, Cinco, Cuatro y Dos. A su vez existe una jerarquía entre palos: el palo de mayor rango es el de triunfo (cambia en cada mano), en segundo lugar está el palo de salida (cambia en cada baza), y finalmente están los dos palos restantes.
 
-\subsection{Desarrollo del juego}
+\subsection*{Desarrollo del juego}
 Cada mano tiene dos fases bien diferenciadas. Una primera fase en la que las reglas son muy similares a las del juego de la Brisca y una segunda en la que las reglas son muy similares al propio juego del Tute.
-\subsubsection{Comienzo de la partida y de cada una de las manos}
+\subsubsection*{Comienzo de la partida y de cada una de las manos}
 Se echa a suertes para saber quién es el que reparte por primera vez y quién es mano (el que se sitúe a la derecha del que reparte).
 
 En las siguientes manos será mano el jugador situado a la derecha de quien se llevó las diez de últimas en la mano anterior.
@@ -229,10 +229,10 @@ En las siguientes manos será mano el jugador situado a la derecha de quien se l
 En cada mano el que reparte dará a cortar la baraja al jugador situado a su izquierda, y seguidamente repartirá 6 cartas a cada jugador una a una y de izquierda a derecha. Cuando haya terminado de repartir las cartas, levantará la siguiente dejándola visible junto al mazo durante toda la mano: esa carta será la que pinte, la que marque el triunfo en esa mano.
 
 Cada una de las manos consta de 10 bazas. Una baza es el conjunto de cartas (una por cada jugador) que lanzan sobre el tapete los jugadores en su turno respectivo. Cada vez que se completa una baza habrá un jugador que la gana, que se la lleva.
-\subsubsection{Primera fase de la mano}
+\subsubsection*{Primera fase de la mano}
 Mientras queden cartas en el mazo (durante las cuatro primeras manos), el que va de mano echará al centro del tapete una de sus cartas (la que él quiera), y los demás, de izquierda a derecha, deberán echar una más cada uno, la que ellos quieran, sin limitaciones u obligaciones de ningún tipo respecto a cuál echar.
 
-\subsubsection{Recoger las bazas}
+\subsubsection*{Recoger las bazas}
 
 La baza se la llevará el jugador que hubiera echado la carta más alta del palo de triunfo, y si no hay triunfos sobre el tapete, la carta más alta del palo de salida.
 
@@ -240,13 +240,13 @@ En las bazas sucesivas, dentro de una misma mano, el jugador que se ha llevado l
 
 Antes de lanzar nuevamente las cartas para jugar una nueva baza, todos los jugadores tomarán una carta de encima del mazo, empezando por el que ganó la baza anterior, de forma que siempre tengan seis cartas en la mano.
 
-\subsubsection{Cambio de cartas}
+\subsubsection*{Cambio de cartas}
 
 Cuando un jugador tuviera en su mano durante el juego el siete del palo de triunfo, podrá cambiarlo por la carta que pinte si ésta fuera una carta de valor (As, Tres, Rey, Sota o Caballo). Este cambio podrá hacerse justo tras haber ganado una baza y antes de proceder a robar la carta correspondiente del mazo.
 
 Para obtener el cambio de carta debe pulsarse en cualquier momento la carta que marca el triunfo, de modo que el programa realiza el cambio en cuanto éste es posible.
 
-\subsubsection{Segunda fase de la mano o fase de Arrastre}
+\subsubsection*{Segunda fase de la mano o fase de Arrastre}
 
 Lógicamente, conforme avance el juego en una mano, las cartas del mazo se acabarán y llegará un momento en que no habrá cartas para robar: en las seis últimas bazas se jugará sólo con las cartas que tuvieran en la mano. Cuando las cartas del mazo se acaban, el último jugador toma la carta que señala el palo de triunfo.
 
@@ -261,7 +261,7 @@ En esta fase cambian las normas en cuanto a obligatoriedad al echar cartas, pasa
 	\item En las bazas sucesivas, dentro de una misma mano, el jugador que se ha llevado la última baza es el que empezará lanzando la 1ª carta de la baza siguiente.
 \end{itemize}
 
-\subsubsection{Cánticos}
+\subsubsection*{Cánticos}
 
 Durante el desarrollo de la mano, si un jugador tuviera el rey y la sota de un mismo palo, podrá realizar un cántico, es lo que se denomina cantar las 40 (si se trata de la sota y el rey del palo de triunfo) o cantar las 20 (si se trata de rey y sota de cualquier otro palo). Deberá indicar tal circunstancia precisando el palo en el que canta las 20 (20 en oros, copas, espadas o bastos) o si canta las 40 bastará que lo indique sin necesidad de indicar el palo, ya que en cada mano sólo existe un palo de triunfo. Si el cántico se hace durante la fase de arrastre, no es necesario indicar el palo del que se trata, salvo que así lo solicite el propio compañero, en cuyo caso sí deberá indicarse el palo concreto.
 
@@ -269,7 +269,7 @@ Los cánticos asignan los tantos que indican sus nombres (20 ó 40) a efectos de
 
 Los cánticos pueden realizarse cuando la propia pareja ha realizado la última baza.
 
-\subsubsection{Puntuación por las bazas}
+\subsubsection*{Puntuación por las bazas}
 
 Una vez que se han completado todas las bazas de una mano, se procederá al recuento de los puntos obtenidos por cada jugador en esa mano por las bazas ganadas, que se sumarán a los ya obtenidos por razón de los cánticos.
 
@@ -290,7 +290,7 @@ Si ambas parejas superan dicha cantidad no gana necesariamente la qué más tant
 
 Si ninguna de las parejas supera los 100 tantos en una mano se jugará una mano más llamada "de vueltas". No es preciso que en la mano de vuelta sean jugadas todas las cartas, sino que el ganador de cada baza tiene la opción de anunciar que ha superado los 100 puntos, dándola así por finalizada. Si efectivamente, sumando los puntos de la mano anterior, supera los 100 puntos, la mano es suya; en caso contrario, será para la pareja oponente.
 
-\subsection{Final de la partida}
+\subsection*{Final de la partida}
 
 Gana la partida aquella pareja que antes consiga alcanzar el número de cotos pactado inicialmente, formado a su vez por tres manos/puntos.
 

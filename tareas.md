@@ -2,23 +2,23 @@
 
 
 # Backend
-	* Servidor funcionando
+	* Servidor funcionando -> 2 horas
 		* Configuración de red
 		* Instalación de binarios
 		* Instalación de Docker
 
 
 	* API-lógica
-		* Definir interfaz con el frontend
-		* Implementar capa de acceso a datos
+		* Definir interfaz con el frontend -> 5 horas
+		* Implementar capa de acceso a datos -> 5-10 horas
 		* Logica
-			* Diseñar lógica del juego
-			* Implementar lógica
-			* Diseñar test de lógica
+			* Diseñar lógica del juego -> 10 horas
+			* Implementar lógica -> 20 horas
+			* Diseñar test de lógica -> 10 horas
 		* Torneos
 			* ¿?
 
-		* ¿Inteligencia artificial ?
+		* ¿Inteligencia artificial ? 
 
 	* Base de datos
 		* Definir modelo de datos
@@ -29,9 +29,9 @@
 		
 
 	* WebServer
-		* Crear contenedor
-		* Implementar script de despliegue (Docker)
-		* Test de funcionamiento básico
+		* Crear contenedor -> 5 horas
+		* Implementar script de despliegue (Docker) -> 1 hora
+		* Test de funcionamiento básico -> 2 horas
 
 
 # Frontend
@@ -57,3 +57,4 @@
 
 
 
+test

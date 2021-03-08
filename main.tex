@@ -182,6 +182,15 @@ En cuanto al desarrollo del código, va a hacerse uso de Visual Studio Code, con
 %Guías para la documentación de diseño del software y otros documentos del proyecto, guías para el diseño gráfico de las GUI (estética, usabilidad...).
 
 %Actividades de control de calidad del código que se realizarán: revisiones de código por pares, revisiones de requisitos o diagramas UML por pares, tipos de tests automáticos o manuales que se llevarán a cabo.
+Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
+
+Pruebas de integración del API con las aplicaciones web y android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
+
+Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema la pareja asignada revisará el código.
+
+Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que puedan ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
+
+Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad.
 
 \subsubsection{Calendario del proyecto y división del trabajo}
 %Diagrama de Gantt que recoja las tareas a realizar. Tened en cuenta que trabajáis con dos iteraciones y por tanto que hay una entrega intermedia y una final, y esto debe estar reflejado en este diagrama. Tened en cuenta que es normal que lo tengáis que actualizar conforme avance el proyecto (cuándo y cómo establezcáis en la sección 3.1.2 (Procesos de ejecución y control).
@@ -245,7 +254,7 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 \begin{itemize}
     \item Un servidor web tradicional como NGINX o Apache.
     \item Creación de nuestro propio servidor.
-\end{end}
+\end{itemize}
 
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.

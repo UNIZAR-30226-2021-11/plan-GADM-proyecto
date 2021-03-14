@@ -178,6 +178,15 @@ En cuanto al desarrollo del código, va a hacerse uso de Visual Studio Code, con
 
 %Cómo se despliega el software más allá de las máquinas de desarrollo: contenedores, máquinas virtuales, servidor en cloud etc. y cómo se configuran esos entornos (rutas, usuarios y contraseñas, puertos y otros elementos).
 
+El \textit{back-end} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{front-end} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
+
+Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{back-end} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
+
+Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{back-end} . Además, deberán hacer uso de GitHub para subir los cambios que realicen.
+
+La aplicación móvil se encontrará disponible en la tienda de aplicaciones de Android, Google Play. La aplicación web será accesible mediante una URL desde un navegador como Google Chrome. Todo el almacenamiento de información relativa a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán realizar peticiones en las rutas especificadas.
+
+
 \subsubsection{Plan de aseguramiento de la calidad}
 %Guías para la documentación de diseño del software y otros documentos del proyecto, guías para el diseño gráfico de las GUI (estética, usabilidad...).
 
@@ -281,7 +290,7 @@ Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor expe
 %Hay que justificar todas las decisiones de diseño. Esto exige contestar a dos preguntas sobre cada decisión: ¿qué alternativas se barajaron? y ¿por qué se eligió una y no las otras?
 
 \appendix
-\section{Reglamento del Guiñote}
+\section{Anexo: Reglamento del Guiñote}
 Fuente: \href{https://www.ludoteka.com/clasika/guinote.html}{Ludoteka.com}
 
 \subsection*{Origen e historia}

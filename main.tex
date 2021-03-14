@@ -28,7 +28,7 @@
     filecolor=magenta,      
     urlcolor=cyan,
     pdftitle={Plan de gestión, análisis, diseño y memorial del proyecto <<Juego online "Guiñote">>},                   
-    bookmarks=true,
+%    bookmarks=true,
 }
 
 
@@ -215,8 +215,22 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 \subsection{Diseño del sistema}
 %Diagramas arquitecturales (de módulos, de componentes y conectores, de distribución), patrones de diseño y estilos arquitecturales que se aplicarán. Las interfaces (de módulos y de componentes) son especialmente importantes. También lo son los protocolos de comunicación entre componentes.
 
+
+El sistema está pensado para facilitar el despliegue en diferentes máquinas
+fácilmente usando Docker.
+
 \subsubsection{Diagramas arquitecturales}
 %Tecnologías elegidas (lenguajes de programación, componentes que se integrarán, API web externas con las que se conectará etc.).
+
+% Tabla de componentes
+%\begin{figure}[htb]
+%
+%    \centering
+%    \includegraphics[width=0.8\textwidth]{}
+%    \label{fig:diag_componentes}
+%    \caption{}
+%\end{figure}
+
 
 \subsubsection{Tecnologías elegidas}
 
@@ -268,10 +282,12 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.
 
+Actuará como proxy inverso para todos los servicios disponibles en la máquina. La conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
+privacidad de las conexiones.
 
 \paragraph*{Base de datos}
 
-En primer lugar se ha tenido que decidir entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
+En primer lugar se ha decidido entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
 SQL, ni la necesidad del escalado que ofrecen las NoSQL, se ha optado por la opción más familiar, una base de datos relacional tradicional.
 
 La implementación a elegir:
@@ -281,7 +297,7 @@ La implementación a elegir:
     \item MySQL
 \end{itemize}
 
-Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor experiencia y es ampliamente usada en servicios en producción.
+Se ha optado por PostgreSQL porqué el equipo tiene mayor experiencia en ella y es ampliamente usada en servicios en producción.
 
 
 

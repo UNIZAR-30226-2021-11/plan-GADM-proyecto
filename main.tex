@@ -216,6 +216,58 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 %División del trabajo en partes (los módulos del software a desarrollar, pero también la documentación, el diseño gráfico, instalaciones o despliegues, pruebas manuales etc.) y reparto de los mismos entre el equipo de desarrollo, al menos a alto nivel (el reparto de labores concretas en el día a día no se detalla aquí, pero hay que explicar bajo qué criterios y quién/cómo se hace eso en la sección 3.1.2 (Procesos de ejecución y control). Debe haber una correspondencia con las tareas que aparecen en el diagrama de Gantt (que no necesariamente tiene que ser una relación uno a uno).
 	%Verificad que esta división del trabajo cubre todos los requisitos.
 
+La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
+14 de abril, para una primera prueba de integración entre frontend y backend.
+
+Habrá unos hitos iniciales:
+\begin{itemize}
+    \item Creación repositorios. Fecha est. 21/03
+    \item Creación de scripts de despliegue automático. Fecha est. 31/03
+    \item Primera prueba integración. Fecha est. 10/04
+\end{itemize}
+
+\paragraph{Calendario equipo android}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+
+\paragraph{Calendario equipo web}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+\paragraph{Calendario equipo backend}
+
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+    \item Definir e implementar el modelo de datos. Fecha est. 22/03
+    \item Desplegar y configurar el servidor Ubuntu. Fecha est. 25/03
+    \item Puesta en funcionamiento del servidor web. Fecha est. 25/03
+    \item Implementación la API-Restful. Fecha est. 10/04
+    \item Implementación de la lógica de juego. Fecha est. 30/04
+    \item Implementación de la inteligencia artificial. Fecha est. 15/05
+    \item Implementación de los torneos. Fecha est. 30/05
+\end{itemize}
+
+
+\paragraph{Diagrama de Gantt}
+
+TODO TODO TODO
+// Convertir las tareas en tareas de Gantt y establecer sus dependencias, ya están puestas en orden temporal pero muchas podrian ser ejecutadas paralelamente.
 \section{Análisis y diseño del sistema}
 \subsection{Análisis de requisitos}
 %Hay que completar y detallar los requisitos preliminares incluidos en la propuesta técnica y económica. Recordad que los requisitos deben ser completos, concretos, medibles cuando tenga sentido y lo menos ambiguos posible. También es importante que estén identificados para facilitar su trazabilidad.
@@ -231,13 +283,19 @@ fácilmente usando Docker.
 %Tecnologías elegidas (lenguajes de programación, componentes que se integrarán, API web externas con las que se conectará etc.).
 
 % Tabla de componentes
-%\begin{figure}[htb]
-%
-%    \centering
-%    \includegraphics[width=0.8\textwidth]{}
-%    \label{fig:diag_componentes}
-%    \caption{}
-%\end{figure}
+El sistema tiene 6 componentes principales relacionados de la siguiente manera:
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/diagrama_componentes.png}
+    \caption{Diagrama de componentes}
+    \label{fig:diag_componentes}
+\end{figure}
+
+Un servicio REST que ofrece una interfaz de acceso CRUD a todos los datos necesarios para
+el funcionamiento de los clientes, su funcionalidad detallada aparece en la sección \ref{REST_API}
+Cada cliente implementará su propia capa de acceso a la API, con la que se comunican mediante
+HTTPS.
+
 
 
 \subsubsection{Tecnologías elegidas}
@@ -264,7 +322,7 @@ Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Andr
 el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
 posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
 
-\paragraph*{RESTful API}
+\paragraph*{RESTful API} \label{REST_API}
 
 Para este componente se han barajado distintas opciones, ya que no está tan marcado por la plataforma sobre la que se despliega como los componentes de la interfaz.
 \begin{itemize}

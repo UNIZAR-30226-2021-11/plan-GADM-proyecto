@@ -7,7 +7,7 @@
 %Code Highlighting
 %He tenido que quitar el Minted porque me daba error
 \usepackage{lastpage}
-
+\usepackage{placeins}
 %\usepackage{biblatex}
 %\addbibresource{bibliografia.bib}
 
@@ -415,8 +415,18 @@ el funcionamiento de los clientes, su funcionalidad detallada aparece en la secc
 Cada cliente implementará su propia capa de acceso a la API, con la que se comunican mediante
 HTTPS.
 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/diagrama_despliegue.png}
+    \caption{Diagrama de despliegue}
+    \label{fig:diag_despliegue}
+\end{figure}
 
+Los clientes se conectarán mediante https al contenedor NGINX, encargado de redireccionarlos 
+hacia el servidor web o hacia la API. 
+Nunca se permitirán conexiones desde el exterior a la base de datos para impedir ataques sobre ella. 
 
+\FloatBarrier
 \subsubsection{Tecnologías elegidas}
 
 El proyecto se va a desarrollar con diferentes lenguajes de programación, esto se hace para aprovechar las 

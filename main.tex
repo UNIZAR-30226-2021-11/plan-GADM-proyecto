@@ -3,6 +3,7 @@
 
 \usepackage[spanish,es-noindentfirst]{babel}
 \usepackage{graphicx}
+\usepackage{longtable}
 %Code Highlighting
 %He tenido que quitar el Minted porque me daba error
 \usepackage{lastpage}
@@ -307,7 +308,7 @@ TODO TODO TODO
 
 \subsubsection{Requisitos funcionales} % Requisitos funcionales
 \begin{center}
-    \begin{tabular}{ |l|l| }
+    \begin{longtable}{ | p{0.15\textwidth} | p{0.85\textwidth} | }
         \hline
         \textbf{Código} & \textbf{Descripción} \\
         \hline
@@ -352,12 +353,12 @@ TODO TODO TODO
         \hline
         RF-19 & En el caso de producirse una desconexión, el jugador en cuestión será sustituido por la inteligencia artificial. \\
         \hline
-    \end{tabular}
+    \end{longtable}
 \end{center}
 
 \subsubsection{Requisitos no funcionales} % Requisitos no funcionales
 \begin{center}
-    \begin{tabular}{ |l|l| }
+    \begin{longtable}{ | p{0.15\textwidth} | p{0.85\textwidth} | }
         \hline
         \textbf{Código} & \textbf{Descripción} \\
         \hline
@@ -387,7 +388,7 @@ TODO TODO TODO
         \hline
         RNF-13 & Tanto la web como la aplicación móvil tendrán su interfaz gráfica bien estructurada, organizando el contenido por pestañas que abarquen todas las funciones disponibles (que dependerán de si se trata de un usuario o un administrador). \\
         \hline
-    \end{tabular}
+    \end{longtable}
 \end{center}
 
 \subsection{Diseño del sistema}

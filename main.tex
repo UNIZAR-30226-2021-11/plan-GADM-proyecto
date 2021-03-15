@@ -184,7 +184,7 @@ En lo respectivo a la base de datos del backend, va a emplearse PostreSQL ya que
 
 
 \paragraph*{Desarrollo de la aplicación Android}
-Para el desarrollo del cliente Android va a emplearse el lenguaje Java, ya que está ampliamente soportado en los dispostivos con sistema operativo Android y que ofrece un buen soporte para el desarrollo de aplicaciones nativas. Además, se empleará la base de datos de los teléfonos inteligentes para guardar la información de la aplicación, es decirse hará uso de SQLite
+Para el desarrollo del cliente Android va a emplearse el lenguaje Java, ya que está ampliamente soportado en los dispositivos con sistema operativo Android y que ofrece un buen soporte para el desarrollo de aplicaciones nativas. Además, se empleará la base de datos de los teléfonos inteligentes para guardar la información de la aplicación, es decirse hará uso de SQLite
 
 Respecto al desarrollo de la aplicación, va a trabajarse con Android Studio, ya que se trata de un IDE muy completo y que proporciona funcionalidades de gran utilidad, como la integración de emuladores Android, que facilitan la creación de aplicaciones Android.
 
@@ -235,7 +235,7 @@ La aplicación móvil se encontrará disponible en la tienda de aplicaciones de 
 %Actividades de control de calidad del código que se realizarán: revisiones de código por pares, revisiones de requisitos o diagramas UML por pares, tipos de tests automáticos o manuales que se llevarán a cabo.
 Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
 
-Pruebas de integración del API con las aplicaciones web y android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
+Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
 
 Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema la pareja asignada revisará el código.
 
@@ -251,7 +251,7 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 	%Verificad que esta división del trabajo cubre todos los requisitos.
 
 La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
-14 de abril, para una primera prueba de integración entre frontend y backend.
+14 de abril, para una primera prueba de integración entre \textit{frontend} y \textit{backend}.
 
 Habrá unos hitos iniciales:
 \begin{itemize}
@@ -299,9 +299,8 @@ Las tareas de éste equipo son las siguientes:
 
 
 \paragraph{Diagrama de Gantt}
+\textbf{El diagrama de gantt se encuentra en el fichero adjunto \texttt{diagrama\_gantt.pdf}}.
 
-TODO TODO TODO
-// Convertir las tareas en tareas de Gantt y establecer sus dependencias, ya están puestas en orden temporal pero muchas podrian ser ejecutadas paralelamente.
 \section{Análisis y diseño del sistema}
 \subsection{Análisis de requisitos}
 %Hay que completar y detallar los requisitos preliminares incluidos en la propuesta técnica y económica. Recordad que los requisitos deben ser completos, concretos, medibles cuando tenga sentido y lo menos ambiguos posible. También es importante que estén identificados para facilitar su trazabilidad.
@@ -312,7 +311,7 @@ TODO TODO TODO
         \hline
         \textbf{Código} & \textbf{Descripción} \\
         \hline
-        RF-1 & El sistema implementará la funcionalidad completa del juego del guiñote, respetando todas las normas del juego original. \\
+        RF-1 & El sistema implementará la funcionalidad completa del juego del Guiñote, respetando todas las normas del juego original. \\
         \hline
         RF-2 & Las partidas estarán basada en turnos. \\
         \hline
@@ -323,7 +322,7 @@ TODO TODO TODO
         RF-5 & El sistema permitirá jugar contra la CPU, pudiendo existir una, dos o tres inteligencias artificiales que desempeñen la función de un jugador. \\
         \hline
         RF-6 & El sistema permitirá pausar la partida para retomarla posteriormente. Para ello, será necesaria la confirmación de, al menos, un miembro de la pareja contraria a la que realizó la petición de pausa.
-        Para su reaundación, todos los participantes deberán ponerse de acuerdo. El sistema garantizará que todas las características de la partida se conserven tal y como se encontraban justo antes de la pausa. \\
+        Para su reanudación, todos los participantes deberán ponerse de acuerdo. El sistema garantizará que todas las características de la partida se conserven tal y como se encontraban justo antes de la pausa. \\
         \hline
         RF-7 & El sistema permitirá que cada jugador pueda personalizar su interfaz gráfica en el juego. Se podrán cambiar los siguientes aspectos: color y diseño del reverso de las cartas y color y diseño del tapete. \\
         \hline
@@ -365,7 +364,7 @@ TODO TODO TODO
         \hline
         \textbf{Código} & \textbf{Descripción} \\
         \hline
-        RNF-1 & El sistema permitirá jugar partidas contra otros usuarios, contra usuarios e inteligencia artificial o solamente contra inteligencia artificial. \\
+        RNF-1 & El sistema permitirá jugar partidas contra otros usuarios, contra usuarios e inteligencia artificial o solamente contra Inteligencia Artificial. \\
         \hline
         RNF-2 & El juego será accesible desde aplicación móvil y desde aplicación web. \\
         \hline
@@ -385,7 +384,7 @@ TODO TODO TODO
         \hline
         RNF-10 & Los usuarios registrados tendrán acceso a un conjunto de operaciones restringido. Podrán jugar partidas, participar en torneos, consultar y modificar su perfil y consultar perfiles de otros usuarios. \\
         \hline
-        RNF-11 & La aplicación web cumplirá las 'Recomendaciones del W3C' en lo relativo a versiones de HTML, CSS, etc. \\
+        RNF-11 & La aplicación web cumplirá las <<Recomendaciones del W3C>> en lo relativo a versiones de HTML, CSS, etc. \\
         \hline
         RNF-12 & La aplicación web seguirá el estándar de accesibilidad WCAG 2.0, establecido por el W3C. \\
         \hline
@@ -440,7 +439,7 @@ fortalezas de cada uno en su campo de aplicación así como la experiencia dispo
 
 \paragraph*{Aplicación Web}
 
-Está dividida en vista y controlador, el modelo del juego estará implementada en el backend, 
+Está dividida en vista y controlador, el modelo del juego estará implementada en el \textit{backend}, 
 la lógica de la interfaz web será implementada con JavaScript nativo en todos los navegadores. 
 La interfaz será implementada con las tecnologías tradicionales web, HTML y CSS.
 
@@ -464,7 +463,7 @@ Para este componente se han barajado distintas opciones, ya que no está tan mar
         de una máquina virtual para su ejecución. Así mismo las implementaciones nativas de servidores web requieren del despliegue de un servidor en Tomcat con
         las implicaciones que pueda tener.
     \item Golang, un lenguaje relativamente novedoso, ampliamente utilizado por empresas trabajando en desarrollo de tecnologías en la nube, es un lenguaje 
-        compilado, por lo que no requiere de una máquina virtual, y a su vez posee unas librerías estandar pensadas para el desarrollo de aplicaciones que 
+        compilado, por lo que no requiere de una máquina virtual, y a su vez posee unas librerías estándar pensadas para el desarrollo de aplicaciones que 
         necesitan conectividad, además el equipo de desarrollo también tiene experiencia en él.
 \end{itemize}
 

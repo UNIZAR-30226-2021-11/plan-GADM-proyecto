@@ -28,7 +28,7 @@
     filecolor=magenta,      
     urlcolor=cyan,
     pdftitle={Plan de gestión, análisis, diseño y memorial del proyecto <<Juego online "Guiñote">>},                   
-    bookmarks=true,
+%    bookmarks=true,
 }
 
 
@@ -108,7 +108,22 @@ En cuanto a la realización de la memoria no se ha establecido un responsable pa
 \subsubsection{Procesos de inicio}
 %Cómo se van a identificar y asignar recursos (p.ej. conseguir servidores en cloud o teléfonos móviles para pruebas, pero también registrarse para acceder a API que se quieran integrar o a herramientas online que se quieran usar etc.).
 
+
 %Cómo se va a abordar la formación inicial de los miembros del equipo (revisar qué tecnologías se van a usar, qué componentes se van a integrar, con qué API hay que conectar y quiénes tienen que formarse, o autoformarse, en todas esas cosas y de qué manera (hacer algún curso online, planificar algo de tiempo para auto-formación con tutoriales y documentación etc.).
+
+En primer lugar, todos los miembros del equipo han adquirido los conocimientos básicos para la utilización de \LaTeX como lenguaje de desarrollo de la documentación necesaria para el proyecto. Para ello, se ha seguido el tutorial \textit{"Learn LaTeX in 30 minutes"} que se puede encontrar en la página web de \textit{Overleaf}.
+Además, continuando en lo que respecta a la formación común, los seis integrantes del equipo asistieron presencialmente a la práctica de la asignatura Proyecto Software, consistente en familiarizarse con la herramienta Git y su uso en conjunto con GitHub. Previamente, se habían adquirido los conocimientos necesarios para la realización
+de dicha práctica asistiendo a las dos horas de clase de teoría sobre fundamentos de Git.
+
+En lo particular, hablando de cada equipo, los encargados del desarrollo del \textit{backend} harán uso de GoLang como lenguaje de programación. Los integrantes de este equipo están familiarizados con dicho lenguaje, ya que lo utilizaron durante todas las prácticas de la asignatura Sistemas Distribuidos. Por este motivo, como formación realizaron el tutorial de la página web oficial de GoLang, \href{www.golang.org}{www.golang.org}.
+Además, este equipo también se encarga del despliegue de la base de datos. Al ser de tipo SQL, ambos integrantes del equipo tienen experiencia y conocimiento suficiente debido a que cursaron la asignatura Bases de Datos durante el cuarto cuatrimestre de la titulación.
+
+En lo que respecta al equipo de desarrollo de la aplicación Android, el aprendizaje de la herramienta Android Studio se realizó durante el quinto cuatrimestre de la titulación, mediante el curso de la asignatura Ingeniería del Software. En ella, se llevó a cabo la implementación de una aplicación de gestión de notas desde cero. Se considera que con esta base de
+conocimientos y la consulta de la documentación oficial sobre el desarrollo en Android cuando sea necesario, es suficiente para poder desarrollar exitosamente el juego del guiñote en una aplicación Android.
+
+Por último, el equipo encargado de desarrollar la aplicación web necesita adquirir los conocimientos necesarios para trabajar con HTML5, CSS y JavaScript. Aunque ambos miembros del equipo ya trabajaron con ellos durante las prácticas de la asignatura Sistemas de la Información, se considera que la experiencia adquirida no fue suficiente para desarrollar una web de la calidad suficiente, por lo que
+ambos se formarán por su propia cuenta, utilizando como fuente de información los tutoriales sobre HTML, CSS y JavaScript que aparecen en la página web \href{www.developer.mozilla.org}{www.developer.mozilla.org}, dentro de la sección "Tecnologías Web".
+
 
 \subsubsection{Procesos de ejecución y control}
 %Cómo se llevarán a cabo las comunicaciones internas, el registro de las decisiones tomadas en reuniones, la redacción de las actas etc.
@@ -173,6 +188,14 @@ En cuanto al desarrollo del código, va a hacerse uso de Visual Studio Code, con
 
 %Procedimiento para realizar cambios al código fuente y los documentos técnicos: workflow de control de versiones utilizado, cuándo/cómo se permiten realizar commits al repositorio compartido, si tienen que ser aceptados por alguien previamente o no, qué hay que anotar en el sistema de gestión de incidencias, quién decide el estado de las incidencias, en qué estados puede estar una incidencia etc.
 
+Toda la gestión del proyecto y el control de las versiones y configuraciones se va a realizar utilizando \textit{GitHub}.El proyecto constará de 4 repositorios que estarán guardados dentro de una organización llamada UNIZAR-30226-2021-11.
+
+Un repositorio será exclusivamente para la documentación, que será realizada utilizando \textit{LaTeX}. Todos los miembros del equipo modificarán el repositorio siguiendo un flujo de trabajo centralizado.
+
+Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{back-end} y los otros dos al \textit{front-end}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
+
+Para el reparto de las tareas se utilizarán las issues de \textit{GitHub}. Cada issue representará una funcionalidad o una tarea a desarrollar. Cuando un miembro del grupo vaya a realizar una de ellas deberá asignársela y cuando la haya completado deberá cerrarla. Además, esta herramienta permite realizar comentarios para facilitar la comunicación entre los miembros del equipo.
+
 \subsubsection{Plan de construcción y despliegue del software}
 %Cómo se construye e integra el software: si hay scripts de construcción automatizada o no (en ese caso qué se usa, y cómo se garantiza que todos los participantes compilan igual y con las mismas dependencias), qué se incluye en la construcción (descarga y actualización de dependencias, compilación, ejecución de tests automáticos...) y cada cuánto se construye (compila, integra, prueba) el sistema completo, cómo se configuran los computadores de los desarrolladores.
 
@@ -208,15 +231,172 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 %División del trabajo en partes (los módulos del software a desarrollar, pero también la documentación, el diseño gráfico, instalaciones o despliegues, pruebas manuales etc.) y reparto de los mismos entre el equipo de desarrollo, al menos a alto nivel (el reparto de labores concretas en el día a día no se detalla aquí, pero hay que explicar bajo qué criterios y quién/cómo se hace eso en la sección 3.1.2 (Procesos de ejecución y control). Debe haber una correspondencia con las tareas que aparecen en el diagrama de Gantt (que no necesariamente tiene que ser una relación uno a uno).
 	%Verificad que esta división del trabajo cubre todos los requisitos.
 
+La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
+14 de abril, para una primera prueba de integración entre frontend y backend.
+
+Habrá unos hitos iniciales:
+\begin{itemize}
+    \item Creación repositorios. Fecha est. 21/03
+    \item Creación de scripts de despliegue automático. Fecha est. 31/03
+    \item Primera prueba integración. Fecha est. 10/04
+\end{itemize}
+
+\paragraph{Calendario equipo android}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+
+\paragraph{Calendario equipo web}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+\paragraph{Calendario equipo backend}
+
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+    \item Definir e implementar el modelo de datos. Fecha est. 22/03
+    \item Desplegar y configurar el servidor Ubuntu. Fecha est. 25/03
+    \item Puesta en funcionamiento del servidor web. Fecha est. 25/03
+    \item Implementación la API-Restful. Fecha est. 10/04
+    \item Implementación de la lógica de juego. Fecha est. 30/04
+    \item Implementación de la inteligencia artificial. Fecha est. 15/05
+    \item Implementación de los torneos. Fecha est. 30/05
+\end{itemize}
+
+
+\paragraph{Diagrama de Gantt}
+
+TODO TODO TODO
+// Convertir las tareas en tareas de Gantt y establecer sus dependencias, ya están puestas en orden temporal pero muchas podrian ser ejecutadas paralelamente.
 \section{Análisis y diseño del sistema}
 \subsection{Análisis de requisitos}
 %Hay que completar y detallar los requisitos preliminares incluidos en la propuesta técnica y económica. Recordad que los requisitos deben ser completos, concretos, medibles cuando tenga sentido y lo menos ambiguos posible. También es importante que estén identificados para facilitar su trazabilidad.
 
+\subsubsection{Requisitos funcionales} % Requisitos funcionales
+\begin{center}
+    \begin{tabular}{ |l|l| }
+        \hline
+        \textbf{Código} & \textbf{Descripción} \\
+        \hline
+        RF-1 & El sistema implementará la funcionalidad completa del juego del guiñote, respetando todas las normas del juego original. \\
+        \hline
+        RF-2 & Las partidas estarán basada en turnos. \\
+        \hline
+        RF-3 & Las partidas consistirán en competiciones entre cuatro personas, organizadas en 2 parejas. \\
+        \hline
+        RF-4 & El sistema determinará y notificará cuál ha sido la pareja ganadora al finalizar cada partida. \\
+        \hline
+        RF-5 & El sistema permitirá jugar contra la CPU, pudiendo existir una, dos o tres inteligencias artificiales que desempeñen la función de un jugador. \\
+        \hline
+        RF-6 & El sistema permitirá pausar la partida para retomarla posteriormente. Para ello, será necesaria la confirmación de, al menos, un miembro de la pareja contraria a la que realizó la petición de pausa.
+        Para su reaundación, todos los participantes deberán ponerse de acuerdo. El sistema garantizará que todas las características de la partida se conserven tal y como se encontraban justo antes de la pausa. \\
+        \hline
+        RF-7 & El sistema permitirá que cada jugador pueda personalizar su interfaz gráfica en el juego. Se podrán cambiar los siguientes aspectos: color y diseño del reverso de las cartas y color y diseño del tapete. \\
+        \hline
+        RF-8 & El sistema guardará un histórico de los resultados de las partidas de cada jugador. En cada entrada de dicho registro, figurarán los siguientes parámetros: duración de la partida, pareja ganadora y puntuación final. \\
+        \hline
+        RF-9 & El sistema permitirá consultar el histórico completo de un jugador, pero solamente desde el perfil de dicho jugador. \\
+        \hline
+        RF-10 & El sistema permitirá la participación en torneos. Para ello, un usuario deberá realizar la inscripción indicando el nombre de usuario de su pareja de juego, lo que enviará una invitación a dicho usuario. Una vez acepte, podrán comenzar a jugar.
+        El sistema de juego será el siguiente: ocho parejas participarán en un mismo torneo con formato eliminatorio, es decir, para ganar un torneo habrá que ganar cuartos de final, semifinal y final. \\
+        \hline
+        RF-11 & El sistema requerirá un \textit{login} al comienzo de cada sesión de juego, lo que permitirá acceder a los usuarios utilizando su nombre de usuario y contraseña. En consecuencia, la creación de una cuenta será absolutamente obligatoria para poder jugar. \\
+        \hline
+        % ¿¿¿¿ Funcional o no funcional ????
+        RF-12 & El sistema dará la opción al usuario de recordar sus credenciales para no tener que iniciar sesión cada vez que lance la aplicación, ya sea a través de la web o de la aplicación móvil. \\
+        \hline
+        RF-13 & El sistema, una vez un usuario haya terminado de crear una cuenta, enviará un correo electrónico de confirmación a la dirección utilizada para crear el perfil. Mientras no se realice la confirmación, dicho usuario no podrá jugar ningún tipo de partida ni participar en torneos. \\
+        \hline
+        RF-14 & El sistema almacenará las contraseñas de las cuentas de los usuarios de forma segura en la base de datos utilizando cifrado de una sola dirección, es decir, almacenando contraseñas con \textit{Hash}. \\
+        \hline
+        RF-15 & El sistema permitirá que un jugador pueda buscar el perfil de cualquier otro jugador mediante su nombre de usuario. \\
+        \hline
+        RF-16 & El perfil de un jugador mostrará su nombre de usuario y un histórico de las diez últimas partidas jugadas en el que figurará, para cada partida, la duración, los nombres de usuario de las parejas enfrentadas, la pareja ganadora y la puntuación final. \\
+        \hline
+        RF-17 & El sistema mostrará las reglas del juego del guiñote si un usuario así lo solicita. \\
+        \hline
+        RF-18 & El sistema ofrecerá al usuario la opción de cerrar la sesión actual, siempre que este no se encuentre en partida. \\
+        \hline
+        RF-19 & En el caso de producirse una desconexión, el jugador en cuestión será sustituido por la inteligencia artificial. \\
+        \hline
+    \end{tabular}
+\end{center}
+
+\subsubsection{Requisitos no funcionales} % Requisitos no funcionales
+\begin{center}
+    \begin{tabular}{ |l|l| }
+        \hline
+        \textbf{Código} & \textbf{Descripción} \\
+        \hline
+        RNF-1 & El sistema permitirá jugar partidas contra otros usuarios, contra usuarios e inteligencia artificial o solamente contra inteligencia artifical. \\
+        \hline
+        RNF-2 & El juego será accesible desde aplicación móvil y desde aplicación web. \\
+        \hline
+        RNF-3 & La aplicación web funcionará en navegadores Google Chrome, Mozilla Firefox y Safari. \\
+        \hline
+        RNF-4 & La aplicación móvil funcionará únicamente en sistemas operativos Android. \\ % versiones mínimas????
+        \hline
+        RNF-5 & Cuando una partida sea pausada, se podrá retomar desde la aplicación móvil si fue pausada en la aplicación web y viceversa. \\
+        \hline
+        RNF-6 & Las partidas se realizarán de manera síncrona, es decir, los jugadores deberán coincidir en el tiempo mientras se desarrolla la partida. \\
+        \hline
+        RNF-7 & Todos los datos relativos al sistema (nombres de usuario, contraseñas, datos de los perfiles, estadísticas de partidas, etc.) estarán almacenados en una base de datos tipo SQL. \\
+        \hline
+        RNF-8 & Los perfiles de usuario del sistema serán dos: usuario registrado y administrador. \\
+        \hline
+        RNF-9 & El administrador podrá realizar cambios sobre el sistema de usuarios como por ejemplo altas, bajas o modificaciones de los datos de usuario. \\
+        \hline
+        RNF-10 & Los usuarios registrados tendrán acceso a un conjunto de operaciones restringido. Podrán jugar partidas, participar en torneos, consultar y modificar su perfil y consultar perfiles de otros usuarios. \\
+        \hline
+        RNF-11 & La aplicación web cumplirá las 'Recomendaciones del W3C' en lo relativo a versiones de HTML, CSS, etc. \\
+        \hline
+        RNF-12 & La aplicación web seguirá el estándar de accesibilidad WCAG 2.0, establecido por el W3C.
+        \hline
+        RNF-13 & Tanto la web como la aplicación móvil tendrán su interfaz gráfica bien estructurada, organizando el contenido por pestañas que abarquen todas las funciones disponibles (que dependerán de si se trata de un usuario o un administrador). \\
+        \hline
+    \end{tabular}
+\end{center}
+
 \subsection{Diseño del sistema}
 %Diagramas arquitecturales (de módulos, de componentes y conectores, de distribución), patrones de diseño y estilos arquitecturales que se aplicarán. Las interfaces (de módulos y de componentes) son especialmente importantes. También lo son los protocolos de comunicación entre componentes.
 
+
+El sistema está pensado para facilitar el despliegue en diferentes máquinas
+fácilmente usando Docker.
+
 \subsubsection{Diagramas arquitecturales}
 %Tecnologías elegidas (lenguajes de programación, componentes que se integrarán, API web externas con las que se conectará etc.).
+
+% Tabla de componentes
+El sistema tiene 6 componentes principales relacionados de la siguiente manera:
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/diagrama_componentes.png}
+    \caption{Diagrama de componentes}
+    \label{fig:diag_componentes}
+\end{figure}
+
+Un servicio REST que ofrece una interfaz de acceso CRUD a todos los datos necesarios para
+el funcionamiento de los clientes, su funcionalidad detallada aparece en la sección \ref{REST_API}
+Cada cliente implementará su propia capa de acceso a la API, con la que se comunican mediante
+HTTPS.
+
+
 
 \subsubsection{Tecnologías elegidas}
 
@@ -242,7 +422,7 @@ Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Andr
 el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
 posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
 
-\paragraph*{RESTful API}
+\paragraph*{RESTful API} \label{REST_API}
 
 Para este componente se han barajado distintas opciones, ya que no está tan marcado por la plataforma sobre la que se despliega como los componentes de la interfaz.
 \begin{itemize}
@@ -268,10 +448,12 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.
 
+Actuará como proxy inverso para todos los servicios disponibles en la máquina. La conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
+privacidad de las conexiones.
 
 \paragraph*{Base de datos}
 
-En primer lugar se ha tenido que decidir entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
+En primer lugar se ha decidido entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
 SQL, ni la necesidad del escalado que ofrecen las NoSQL, se ha optado por la opción más familiar, una base de datos relacional tradicional.
 
 La implementación a elegir:
@@ -281,7 +463,7 @@ La implementación a elegir:
     \item MySQL
 \end{itemize}
 
-Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor experiencia y es ampliamente usada en servicios en producción.
+Se ha optado por PostgreSQL porqué el equipo tiene mayor experiencia en ella y es ampliamente usada en servicios en producción.
 
 
 

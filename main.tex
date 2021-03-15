@@ -28,7 +28,7 @@
     filecolor=magenta,      
     urlcolor=cyan,
     pdftitle={Plan de gestión, análisis, diseño y memorial del proyecto <<Juego online "Guiñote">>},                   
-    bookmarks=true,
+%    bookmarks=true,
 }
 
 
@@ -188,10 +188,27 @@ En cuanto al desarrollo del código, va a hacerse uso de Visual Studio Code, con
 
 %Procedimiento para realizar cambios al código fuente y los documentos técnicos: workflow de control de versiones utilizado, cuándo/cómo se permiten realizar commits al repositorio compartido, si tienen que ser aceptados por alguien previamente o no, qué hay que anotar en el sistema de gestión de incidencias, quién decide el estado de las incidencias, en qué estados puede estar una incidencia etc.
 
+Toda la gestión del proyecto y el control de las versiones y configuraciones se va a realizar utilizando \textit{GitHub}.El proyecto constará de 4 repositorios que estarán guardados dentro de una organización llamada UNIZAR-30226-2021-11.
+
+Un repositorio será exclusivamente para la documentación, que será realizada utilizando \textit{LaTeX}. Todos los miembros del equipo modificarán el repositorio siguiendo un flujo de trabajo centralizado.
+
+Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{back-end} y los otros dos al \textit{front-end}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
+
+Para el reparto de las tareas se utilizarán las issues de \textit{GitHub}. Cada issue representará una funcionalidad o una tarea a desarrollar. Cuando un miembro del grupo vaya a realizar una de ellas deberá asignársela y cuando la haya completado deberá cerrarla. Además, esta herramienta permite realizar comentarios para facilitar la comunicación entre los miembros del equipo.
+
 \subsubsection{Plan de construcción y despliegue del software}
 %Cómo se construye e integra el software: si hay scripts de construcción automatizada o no (en ese caso qué se usa, y cómo se garantiza que todos los participantes compilan igual y con las mismas dependencias), qué se incluye en la construcción (descarga y actualización de dependencias, compilación, ejecución de tests automáticos...) y cada cuánto se construye (compila, integra, prueba) el sistema completo, cómo se configuran los computadores de los desarrolladores.
 
 %Cómo se despliega el software más allá de las máquinas de desarrollo: contenedores, máquinas virtuales, servidor en cloud etc. y cómo se configuran esos entornos (rutas, usuarios y contraseñas, puertos y otros elementos).
+
+El \textit{back-end} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{front-end} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
+
+Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{back-end} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
+
+Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{back-end} . Además, deberán hacer uso de GitHub para subir los cambios que realicen.
+
+La aplicación móvil se encontrará disponible en la tienda de aplicaciones de Android, Google Play. La aplicación web será accesible mediante una URL desde un navegador como Google Chrome. Todo el almacenamiento de información relativa a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán realizar peticiones en las rutas especificadas.
+
 
 \subsubsection{Plan de aseguramiento de la calidad}
 %Guías para la documentación de diseño del software y otros documentos del proyecto, guías para el diseño gráfico de las GUI (estética, usabilidad...).
@@ -214,6 +231,58 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 %División del trabajo en partes (los módulos del software a desarrollar, pero también la documentación, el diseño gráfico, instalaciones o despliegues, pruebas manuales etc.) y reparto de los mismos entre el equipo de desarrollo, al menos a alto nivel (el reparto de labores concretas en el día a día no se detalla aquí, pero hay que explicar bajo qué criterios y quién/cómo se hace eso en la sección 3.1.2 (Procesos de ejecución y control). Debe haber una correspondencia con las tareas que aparecen en el diagrama de Gantt (que no necesariamente tiene que ser una relación uno a uno).
 	%Verificad que esta división del trabajo cubre todos los requisitos.
 
+La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
+14 de abril, para una primera prueba de integración entre frontend y backend.
+
+Habrá unos hitos iniciales:
+\begin{itemize}
+    \item Creación repositorios. Fecha est. 21/03
+    \item Creación de scripts de despliegue automático. Fecha est. 31/03
+    \item Primera prueba integración. Fecha est. 10/04
+\end{itemize}
+
+\paragraph{Calendario equipo android}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+
+\paragraph{Calendario equipo web}
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+
+    \item Implementación de wireframe. Fecha est. 25/04
+    \item Diseño inical interfaz. Fecha est. 1/04
+    \item Implementación capa acceso API. Fecha est. 10/04
+    \item Primera integración. Fecha est. 13/04
+    \item Desarrollo perfil de usuario. Fecha est. 1/05
+\end{itemize}
+\paragraph{Calendario equipo backend}
+
+
+Las tareas de éste equipo son las siguientes:
+\begin{itemize}
+    \item Definir e implementar el modelo de datos. Fecha est. 22/03
+    \item Desplegar y configurar el servidor Ubuntu. Fecha est. 25/03
+    \item Puesta en funcionamiento del servidor web. Fecha est. 25/03
+    \item Implementación la API-Restful. Fecha est. 10/04
+    \item Implementación de la lógica de juego. Fecha est. 30/04
+    \item Implementación de la inteligencia artificial. Fecha est. 15/05
+    \item Implementación de los torneos. Fecha est. 30/05
+\end{itemize}
+
+
+\paragraph{Diagrama de Gantt}
+
+TODO TODO TODO
+// Convertir las tareas en tareas de Gantt y establecer sus dependencias, ya están puestas en orden temporal pero muchas podrian ser ejecutadas paralelamente.
 \section{Análisis y diseño del sistema}
 \subsection{Análisis de requisitos}
 %Hay que completar y detallar los requisitos preliminares incluidos en la propuesta técnica y económica. Recordad que los requisitos deben ser completos, concretos, medibles cuando tenga sentido y lo menos ambiguos posible. También es importante que estén identificados para facilitar su trazabilidad.
@@ -306,8 +375,28 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 \subsection{Diseño del sistema}
 %Diagramas arquitecturales (de módulos, de componentes y conectores, de distribución), patrones de diseño y estilos arquitecturales que se aplicarán. Las interfaces (de módulos y de componentes) son especialmente importantes. También lo son los protocolos de comunicación entre componentes.
 
+
+El sistema está pensado para facilitar el despliegue en diferentes máquinas
+fácilmente usando Docker.
+
 \subsubsection{Diagramas arquitecturales}
 %Tecnologías elegidas (lenguajes de programación, componentes que se integrarán, API web externas con las que se conectará etc.).
+
+% Tabla de componentes
+El sistema tiene 6 componentes principales relacionados de la siguiente manera:
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./images/diagrama_componentes.png}
+    \caption{Diagrama de componentes}
+    \label{fig:diag_componentes}
+\end{figure}
+
+Un servicio REST que ofrece una interfaz de acceso CRUD a todos los datos necesarios para
+el funcionamiento de los clientes, su funcionalidad detallada aparece en la sección \ref{REST_API}
+Cada cliente implementará su propia capa de acceso a la API, con la que se comunican mediante
+HTTPS.
+
+
 
 \subsubsection{Tecnologías elegidas}
 
@@ -333,7 +422,7 @@ Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Andr
 el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
 posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
 
-\paragraph*{RESTful API}
+\paragraph*{RESTful API} \label{REST_API}
 
 Para este componente se han barajado distintas opciones, ya que no está tan marcado por la plataforma sobre la que se despliega como los componentes de la interfaz.
 \begin{itemize}
@@ -359,10 +448,12 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.
 
+Actuará como proxy inverso para todos los servicios disponibles en la máquina. La conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
+privacidad de las conexiones.
 
 \paragraph*{Base de datos}
 
-En primer lugar se ha tenido que decidir entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
+En primer lugar se ha decidido entre usar una base SQL o NoSQL, debido a que nuestro modelo de datos no requiere de la realización de grandes consultas 
 SQL, ni la necesidad del escalado que ofrecen las NoSQL, se ha optado por la opción más familiar, una base de datos relacional tradicional.
 
 La implementación a elegir:
@@ -372,7 +463,7 @@ La implementación a elegir:
     \item MySQL
 \end{itemize}
 
-Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor experiencia y es ampliamente usada en servicios en producción.
+Se ha optado por PostgreSQL porqué el equipo tiene mayor experiencia en ella y es ampliamente usada en servicios en producción.
 
 
 
@@ -381,7 +472,7 @@ Se ha optado por PostgreSQL debido a que es en la que el equipo tiene mayor expe
 %Hay que justificar todas las decisiones de diseño. Esto exige contestar a dos preguntas sobre cada decisión: ¿qué alternativas se barajaron? y ¿por qué se eligió una y no las otras?
 
 \appendix
-\section{Reglamento del Guiñote}
+\section{Anexo: Reglamento del Guiñote}
 Fuente: \href{https://www.ludoteka.com/clasika/guinote.html}{Ludoteka.com}
 
 \subsection*{Origen e historia}

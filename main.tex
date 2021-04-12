@@ -232,6 +232,7 @@ La aplicación móvil se encontrará disponible en la tienda de aplicaciones de 
 %Guías para la documentación de diseño del software y otros documentos del proyecto, guías para el diseño gráfico de las GUI (estética, usabilidad...).
 
 %Actividades de control de calidad del código que se realizarán: revisiones de código por pares, revisiones de requisitos o diagramas UML por pares, tipos de tests automáticos o manuales que se llevarán a cabo.
+
 Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
 
 Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
@@ -240,7 +241,12 @@ Inspección de código para evitar posibles errores que no ha detectado el compi
 
 Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que puedan ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
 
-Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad.
+Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad. En concreto:
+\begin{itemize}
+	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor, para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
+	\item \textbf{Pruebas de caminos:} en cada función del código que tenga varias ejecuciones, por ejemplo la encargada de gestionar la partida de guiñote.
+	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en las funciones que tengan entrada por parte del usuario, para comprobar en que situaciones se produce un error y en caso de que se produzca poder solucionarlo.
+\end{itemize}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
 %Diagrama de Gantt que recoja las tareas a realizar. Tened en cuenta que trabajáis con dos iteraciones y por tanto que hay una entrega intermedia y una final, y esto debe estar reflejado en este diagrama. Tened en cuenta que es normal que lo tengáis que actualizar conforme avance el proyecto (cuándo y cómo establezcáis en la sección 3.1.2 (Procesos de ejecución y control).
@@ -536,7 +542,17 @@ Se realizó una reunión antes de Semana Santa en la que se fijaron las bases pa
 %Funcionamiento de los procesos de control de versiones del código, construcción y despliegue. ¿Ha habido problemas con las integraciones? ¿Problemas con los despliegues? ¿Se han perdido cosas por errores humanos? ¿Cómo se han abordado estas tareas?
 %Pruebas del software. ¿Se han podido cumplir las ideas que se tenían al respecto?
 
+Durante la fase de desarrollo de la primera iteración se ha pasado de trabajar todos los miembros del grupo en conjunto a dividirnos en grupos dependiendo de la tarea a desempeñar (aplicación android, aplicación web y \textit{backend}).Cada grupo está formado por dos integrantes que se reparten el trabajo por medio de la herramienta \textit{issues} que ofrece GitHub.
 
+Para la comunicación se han utilizado dos aplicaciones. Para mensajes sencillos y consultas breves se ha creado un grupo de Whatsapp para el proyecto. Para reuniones o para comunicarse con los compañeros a la hora de trabajar se ha utilizado Discord.Esta aplicación permite tener un servidor propio con varios canales de comunicación,tanto de texto como de voz, para los distintos grupos.
+
+El progreso del proyecto se ha medido mediante el diagrama de Gantt y las \textit{issues} de GitHub. Cada \textit{issue} representa una tarea a realizar y esta debe de estar cerrada antes de que haya concluido en el diagrama. Por el momento no se han encontrado divergencias con respecto a la planificación inicial y todas las tareas que han cumplido plazo han sido implementadas.
+
+Las tecnologías seleccionadas inicialmente han sido las adecuadas, ya que se había trabajado con ellas previamente y no han supuesto una desventaja a la hora del desarrollo.
+
+El control de versiones se ha realizado con GitHub, porque nos ha permitido trabajar en el mismo proyecto a varias personas y juntar todo el código de forma automática (merge), salvo en algunos casos en los que se ha trabajado sobre el mismo fichero y se han producido conflictos que han sido resueltos de forma manual. Además todos los entornos de desarrollo seleccionados incluyen funcionalidades que facilitan esta tarea. 
+
+Las primeras pruebas realizadas han sido de integración entre el servidor y los clientes, dichas pruebas han consistido en comprobar que la comunicación se produce de manera correcta y que los datos enviados y recibidos son los esperados.
 
 %\subsection{Cierre del proyecto}
 %Al menos:

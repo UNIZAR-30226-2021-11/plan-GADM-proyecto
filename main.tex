@@ -425,8 +425,11 @@ HTTPS.
     \label{fig:diag_despliegue}
 \end{figure}
 
-Los clientes se conectarán mediante https al contenedor NGINX, encargado de redireccionarlos 
-hacia el servidor web o hacia la API. 
+Los clientes se conectarán mediante https al contenedor NGINX, con funcionalidad
+únicamente de proxy inverso, redireccionando las peticiones a los diferentes endpoints.
+El servidor web será una sencilla aplicación que servirá las páginas presentes
+en diferentes directorios, será implementado en Go.
+
 Nunca se permitirán conexiones desde el exterior a la base de datos para impedir ataques sobre ella. 
 
 \FloatBarrier

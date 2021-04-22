@@ -232,6 +232,7 @@ La aplicación móvil se encontrará disponible en la tienda de aplicaciones de 
 %Guías para la documentación de diseño del software y otros documentos del proyecto, guías para el diseño gráfico de las GUI (estética, usabilidad...).
 
 %Actividades de control de calidad del código que se realizarán: revisiones de código por pares, revisiones de requisitos o diagramas UML por pares, tipos de tests automáticos o manuales que se llevarán a cabo.
+
 Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
 
 Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
@@ -240,7 +241,12 @@ Inspección de código para evitar posibles errores que no ha detectado el compi
 
 Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que puedan ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
 
-Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad.
+Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad. En concreto:
+\begin{itemize}
+	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor, para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
+	\item \textbf{Pruebas de caminos:} en cada función del código que tenga varias ejecuciones, por ejemplo la encargada de gestionar la partida de guiñote.
+	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en las funciones que tengan entrada por parte del usuario, para comprobar en que situaciones se produce un error y en caso de que se produzca poder solucionarlo.
+\end{itemize}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
 %Diagrama de Gantt que recoja las tareas a realizar. Tened en cuenta que trabajáis con dos iteraciones y por tanto que hay una entrega intermedia y una final, y esto debe estar reflejado en este diagrama. Tened en cuenta que es normal que lo tengáis que actualizar conforme avance el proyecto (cuándo y cómo establezcáis en la sección 3.1.2 (Procesos de ejecución y control).
@@ -312,46 +318,46 @@ Las tareas de éste equipo son las siguientes:
         \hline
         RF-1 & El sistema implementará la funcionalidad completa del juego del Guiñote, respetando todas las normas del juego original. \\
         \hline
-        RF-2 & Las partidas estarán basada en turnos. \\
+        RF-2 & Las partidas consistirán en competiciones entre cuatro personas, organizadas en 2 parejas. \\
         \hline
-        RF-3 & Las partidas consistirán en competiciones entre cuatro personas, organizadas en 2 parejas. \\
+        RF-3 & El sistema determinará y notificará cuál ha sido la pareja ganadora al finalizar cada partida. \\
         \hline
-        RF-4 & El sistema determinará y notificará cuál ha sido la pareja ganadora al finalizar cada partida. \\
+        RF-4 & El sistema permitirá jugar contra la CPU, pudiendo existir una, dos o tres inteligencias artificiales que desempeñen la función de un jugador. \\
         \hline
-        RF-5 & El sistema permitirá jugar contra la CPU, pudiendo existir una, dos o tres inteligencias artificiales que desempeñen la función de un jugador. \\
-        \hline
-        RF-6 & El sistema permitirá pausar la partida para retomarla posteriormente. Para ello, será necesaria la confirmación de, al menos, un miembro de la pareja contraria a la que realizó la petición de pausa.
+        RF-5 & El sistema permitirá pausar la partida para retomarla posteriormente. Para ello, será necesaria la confirmación de, al menos, un miembro de la pareja contraria a la que realizó la petición de pausa.
         Para su reanudación, todos los participantes deberán ponerse de acuerdo. El sistema garantizará que todas las características de la partida se conserven tal y como se encontraban justo antes de la pausa. \\
         \hline
-        RF-7 & El sistema permitirá que cada jugador pueda personalizar su interfaz gráfica en el juego. Se podrán cambiar los siguientes aspectos: color y diseño del reverso de las cartas y color y diseño del tapete. \\
+        RF-6 & El sistema permitirá que cada jugador pueda personalizar su interfaz gráfica en el juego. Se podrán cambiar los siguientes aspectos: color y diseño del reverso de las cartas y color y diseño del tapete. \\
         \hline
-        RF-8 & El sistema guardará un histórico de los resultados de las partidas de cada jugador. En cada entrada de dicho registro, figurarán los siguientes parámetros: duración de la partida, pareja ganadora y puntuación final. \\
+        RF-7 & El sistema guardará un histórico de los resultados de las partidas de cada jugador. En cada entrada de dicho registro, figurarán los siguientes parámetros: duración de la partida, pareja ganadora y puntuación final. \\
         \hline
-        RF-9 & El sistema permitirá consultar el histórico completo de un jugador, pero solamente desde el perfil de dicho jugador. \\
+        RF-8 & El sistema permitirá consultar el histórico completo de un jugador, pero solamente desde el perfil de dicho jugador. \\
         \hline
-        RF-10 & El sistema permitirá la participación en torneos. Para ello, un usuario deberá realizar la inscripción indicando el nombre de usuario de su pareja de juego, lo que enviará una invitación a dicho usuario. Una vez acepte, podrán comenzar a jugar.
+        RF-9 & El sistema permitirá la participación en torneos. Para ello, un usuario deberá realizar la inscripción indicando el nombre de usuario de su pareja de juego, lo que enviará una invitación a dicho usuario. Una vez acepte, podrán comenzar a jugar.
         El sistema de juego será el siguiente: ocho parejas participarán en un mismo torneo con formato eliminatorio, es decir, para ganar un torneo habrá que ganar cuartos de final, semifinal y final. \\
         \hline
-        RF-11 & El sistema requerirá un \textit{login} al comienzo de cada sesión de juego, lo que permitirá acceder a los usuarios utilizando su nombre de usuario y contraseña. En consecuencia, la creación de una cuenta será absolutamente obligatoria para poder jugar. \\
+        RF-10 & El sistema requerirá un \textit{login} al comienzo de cada sesión de juego, lo que permitirá acceder a los usuarios utilizando su nombre de usuario y contraseña. En consecuencia, la creación de una cuenta será absolutamente obligatoria para poder jugar. \\
         \hline
-        % ¿¿¿¿ Funcional o no funcional ????
-        RF-12 & El sistema dará la opción al usuario de recordar sus credenciales para no tener que iniciar sesión cada vez que lance la aplicación, ya sea a través de la web o de la aplicación móvil. \\
+        RF-11 & El sistema dará la opción al usuario de recordar sus credenciales para no tener que iniciar sesión cada vez que lance la aplicación, ya sea a través de la web o de la aplicación móvil. \\
         \hline
-        RF-13 & El sistema, una vez un usuario haya terminado de crear una cuenta, enviará un correo electrónico de confirmación a la dirección utilizada para crear el perfil. Mientras no se realice la confirmación, dicho usuario no podrá jugar ningún tipo de partida ni participar en torneos. \\
+        RF-12 & El sistema, una vez un usuario haya terminado de crear una cuenta, enviará un correo electrónico de confirmación a la dirección utilizada para crear el perfil. Mientras no se realice la confirmación, dicho usuario no podrá jugar ningún tipo de partida ni participar en torneos. \\
         \hline
-        RF-14 & El sistema almacenará las contraseñas de las cuentas de los usuarios de forma segura en la base de datos utilizando cifrado de una sola dirección, es decir, almacenando contraseñas con \textit{Hash}. \\
+        RF-13 & El sistema almacenará las contraseñas de las cuentas de los usuarios de forma segura en la base de datos utilizando cifrado de una sola dirección, es decir, almacenando contraseñas con \textit{Hash}. \\
         \hline
-        RF-15 & El sistema permitirá que un jugador pueda buscar el perfil de cualquier otro jugador mediante su nombre de usuario. \\
+        RF-14 & El sistema permitirá que un jugador pueda buscar el perfil de cualquier otro jugador mediante su nombre de usuario. \\
         \hline
-        RF-16 & El perfil de un jugador mostrará su nombre de usuario y un histórico de las diez últimas partidas jugadas en el que figurará, para cada partida, la duración, los nombres de usuario de las parejas enfrentadas, la pareja ganadora y la puntuación final. \\
+        RF-15 & El perfil de un jugador mostrará su nombre de usuario y un histórico de las diez últimas partidas jugadas en el que figurará, para cada partida, la duración, los nombres de usuario de las parejas enfrentadas, la pareja ganadora y la puntuación final. \\
         \hline
-        RF-17 & El sistema mostrará las reglas del juego del guiñote si un usuario así lo solicita. \\
+        RF-16 & El sistema mostrará las reglas del juego del guiñote si un usuario así lo solicita. \\
         \hline
-        RF-18 & El sistema ofrecerá al usuario la opción de cerrar la sesión actual, siempre que este no se encuentre en partida. \\
+        RF-17 & El sistema ofrecerá al usuario la opción de cerrar la sesión actual, siempre que este no se encuentre en partida. \\
         \hline
-        RF-19 & En el caso de producirse una desconexión, el jugador en cuestión será sustituido por la inteligencia artificial. \\
+        RF-18 & En el caso de producirse una desconexión, el jugador en cuestión será sustituido por la inteligencia artificial. \\
         \hline
-        RF-20 & El sistema permitirá buscar partidas concretas mediante el código la misma para unirse a ella. \\
+        RF-19 & El sistema permitirá buscar partidas concretas mediante el código la misma para unirse a ella. \\
+        \hline
+        RF-20 & El sistema permitirá a los usuarios realizar el borrado de la cuenta con la que se registraron, lo que implicará el borrado de todos los datos almacenados en la base de datos que estén relacionados con su perfil (correo electrónico, contraseña y otros datos personales, 
+        pero no partidas en las que el usuario haya participado, ya que representan datos que también se encuentran relacionados con el resto de usuarios del sistema). \\
         \hline
         \caption{Tabla de Requisitos Funcionales}
     \end{longtable}
@@ -377,17 +383,13 @@ Las tareas de éste equipo son las siguientes:
         \hline
         RNF-7 & Todos los datos relativos al sistema (nombres de usuario, contraseñas, datos de los perfiles, estadísticas de partidas, etc.) estarán almacenados en una base de datos tipo SQL. \\
         \hline
-        RNF-8 & Los perfiles de usuario del sistema serán dos: usuario registrado y administrador. \\
+        RNF-8 & Los usuarios registrados tendrán acceso a un conjunto de operaciones restringido. Podrán jugar partidas, participar en torneos, consultar y modificar su perfil y consultar perfiles de otros usuarios. \\
         \hline
-        RNF-9 & El administrador podrá realizar cambios sobre el sistema de usuarios como por ejemplo altas, bajas o modificaciones de los datos de usuario. \\
+        RNF-9 & La aplicación web cumplirá las <<Recomendaciones del W3C>> en lo relativo a versiones de HTML, CSS, etc. \\
         \hline
-        RNF-10 & Los usuarios registrados tendrán acceso a un conjunto de operaciones restringido. Podrán jugar partidas, participar en torneos, consultar y modificar su perfil y consultar perfiles de otros usuarios. \\
+        RNF-10 & La aplicación web seguirá el estándar de accesibilidad WCAG 2.0, establecido por el W3C. \\
         \hline
-        RNF-11 & La aplicación web cumplirá las <<Recomendaciones del W3C>> en lo relativo a versiones de HTML, CSS, etc. \\
-        \hline
-        RNF-12 & La aplicación web seguirá el estándar de accesibilidad WCAG 2.0, establecido por el W3C. \\
-        \hline
-        RNF-13 & Tanto la web como la aplicación móvil tendrán su interfaz gráfica bien estructurada, organizando el contenido por pestañas que abarquen todas las funciones disponibles (que dependerán de si se trata de un usuario o un administrador). \\
+        RNF-11 & Tanto la web como la aplicación móvil tendrán su interfaz gráfica bien estructurada, organizando el contenido por pestañas que abarquen todas las funciones disponibles (que dependerán de si se trata de un usuario o un administrador). \\
         \hline
         
         \caption{Tabla de Requisitos No Funcionales}
@@ -536,7 +538,23 @@ Se realizó una reunión antes de Semana Santa en la que se fijaron las bases pa
 %Funcionamiento de los procesos de control de versiones del código, construcción y despliegue. ¿Ha habido problemas con las integraciones? ¿Problemas con los despliegues? ¿Se han perdido cosas por errores humanos? ¿Cómo se han abordado estas tareas?
 %Pruebas del software. ¿Se han podido cumplir las ideas que se tenían al respecto?
 
-\subsection{Cierre del proyecto}
+Durante la fase de desarrollo de la primera iteración se ha pasado de trabajar todos los miembros del grupo en conjunto a dividirnos en grupos dependiendo de la tarea a desempeñar (aplicación android, aplicación web y \textit{backend}).Cada grupo está formado por dos integrantes que se reparten el trabajo por medio de la herramienta \textit{issues} que ofrece GitHub.
+
+Para la comunicación se han utilizado dos aplicaciones. Para mensajes sencillos y consultas breves se ha creado un grupo de Whatsapp para el proyecto. Para reuniones o para comunicarse con los compañeros a la hora de trabajar se ha utilizado Discord.Esta aplicación permite tener un servidor propio con varios canales de comunicación,tanto de texto como de voz, para los distintos grupos.
+
+El progreso del proyecto se ha medido mediante el diagrama de Gantt y las \textit{issues} de GitHub. Cada \textit{issue} representa una tarea a realizar y esta debe de estar cerrada antes de que haya concluido en el diagrama. Por el momento no se han encontrado divergencias con respecto a la planificación inicial y todas las tareas que han cumplido plazo han sido implementadas.
+
+Las tecnologías seleccionadas inicialmente han sido las adecuadas, ya que se había trabajado con ellas previamente y no han supuesto una desventaja a la hora del desarrollo.
+
+El control de versiones se ha realizado con GitHub, porque nos ha permitido trabajar en el mismo proyecto a varias personas y juntar todo el código de forma automática (merge), salvo en algunos casos en los que se ha trabajado sobre el mismo fichero y se han producido conflictos que han sido resueltos de forma manual. Además todos los entornos de desarrollo seleccionados incluyen funcionalidades que facilitan esta tarea. 
+
+Las primeras pruebas realizadas han sido de integración entre el servidor y los clientes, dichas pruebas han consistido en comprobar que la comunicación se produce de manera correcta y que los datos enviados y recibidos son los esperados.
+
+También se han realizado pruebas unitarias sobre todas funciones de la parte del \textit{backend} que se encarga de la funcionalidad y la lógica del juego.
+
+En la parte de \textit{frontend} se han hecho pruebas de navegación para verificar que se puede acceder a todas las pantallas tal y como se indica en el mapa de navegación.
+
+%\subsection{Cierre del proyecto}
 %Al menos:
 %Comparar las estimaciones iniciales (tamaño, esfuerzos, costes) con los resultados finales, analizar los resultados y tratar de expresar algunas lecciones aprendidas.
 %Lecciones aprendidas sobre herramientas y tecnologías.

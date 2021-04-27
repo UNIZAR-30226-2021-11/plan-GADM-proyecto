@@ -235,17 +235,23 @@ La aplicación móvil se encontrará disponible en la tienda de aplicaciones de 
 
 Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
 
-Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración.
+Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración. Para ello se han utilizado las siguientes herramientas:
+\begin{itemize}
+	\item \textit{Postman:} es una herramienta que permite realizar peticiones al API y visualizar los datos recibidos sin necesidad de crear un cliente.
+	\item \textit{Android Pofiler:} es una utilidad de android studio que permite monitorizar el tráfico de red. 
+	\item \textit{Wireshark:} es un analizador de paquetes para visualizar los datos que se envían y reciben entre el API y el \textit{front-end web}. 
+\end{itemize}  
 
 Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema la pareja asignada revisará el código.
 
-Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que puedan ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
+Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que pueda ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
 
 Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad. En concreto:
 \begin{itemize}
-	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor, para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
-	\item \textbf{Pruebas de caminos:} en cada función del código que tenga varias ejecuciones, por ejemplo la encargada de gestionar la partida de guiñote.
-	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en las funciones que tengan entrada por parte del usuario, para comprobar en que situaciones se produce un error y en caso de que se produzca poder solucionarlo.
+	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor (API), para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
+	\item \textbf{Pruebas de caminos:} en la parte del \textit{back-end} que se encarga de la simulación del juego.
+	\item \textbf{Pruebas unitarias:} en cada función del \textit{back-end} en la parte encargada de la simulación, utilizando la librería estándar de Goland (go test).
+	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en aquellas partes del \textit{front-end} donde tiene que interactuar el usuario insertando datos de forma manual, como por ejemplo al registrarse, iniciar sesion, buscar el perfil de algún usuario...
 \end{itemize}
 
 \subsubsection{Calendario del proyecto y división del trabajo}

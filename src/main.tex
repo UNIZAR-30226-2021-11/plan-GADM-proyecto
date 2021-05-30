@@ -10,12 +10,14 @@
 \usepackage{placeins}
 %\usepackage{biblatex}
 %\addbibresource{bibliografia.bib}
-
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{subcaption}
 %Encabezados y pie de página
 \usepackage{fancyhdr}               
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{Plan de gestión, análisis, diseño y memorial del proyecto} %No cabe lo de Juego online <<Guiñote>>
+\fancyhead[L]{Plan de gestión, análisis, diseño y memoria del proyecto} %No cabe lo de Juego online <<Guiñote>>
 \fancyfoot[L]{Grupo 11 | Susan L. Graham}
 \fancyfoot[R]{\thepage \hspace{1pt} de \pageref{LastPage}}
 
@@ -23,6 +25,7 @@
 \renewcommand{\footrulewidth}{1pt}
 
 \usepackage{hyperref}
+\usepackage[T1]{fontenc}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -62,7 +65,7 @@
         \vfill
             
     	%Cambiar logotipo EINA por logo identificativo
-    	\includegraphics[width=0.6\textwidth]{./images/logo.png}
+    	\includegraphics[width=0.6\textwidth]{../images/logo}
             
         \vspace{1.5cm}
             
@@ -76,6 +79,8 @@
 \end{titlepage}
 
 \tableofcontents
+
+\break
 
 \section{Introducción}
 %Resumen del proyecto, propósito, alcance, objetivos, entregables e hitos principales. Alrededor de una página es suficiente. No olvidar una breve descripción de la estructura del resto del documento.
@@ -158,7 +163,7 @@ ambos se formarán por su propia cuenta, utilizando como fuente de información 
 
 Las comunicaciones internas se realizarán mediante la aplicación de mensajería instantánea WhatsApp, a través del grupo creado a tal efecto. Además, se realizarán reuniones en el \textit{slot} acordado la primera semana, en el que todos los miembros están disponibles: martes de 12:00 a 14:00 (en la hora de seminario). El contenido de estas reuniones será recogido por Mario Chavanel Moreno, que se encargará de la redacción de actas cuyo contenido incluirá las decisiones tomadas.
 
-Además, el equipo usará GitHub como herramienta de apoyo para la asignación de las tareas a realizar. El director del proyecto, Javier Herrer Torres, creará las \textit{issues} correspondientes. Además, podrá asignarla a un equipo en concreto (\textit{front-end} o \textit{back-end}) o podrán ser los propios integrantes los que se auto asignen las tareas que más les interesen.
+Además, el equipo usará GitHub como herramienta de apoyo para la asignación de las tareas a realizar. El director del proyecto, Javier Herrer Torres, creará las \textit{issues} correspondientes. Además, podrá asignarla a un equipo en concreto (\textit{frontend} o \textit{backend}) o podrán ser los propios integrantes los que se auto asignen las tareas que más les interesen.
 
 Las posibles disputas que surjan sobre, por ejemplo, aspectos funcionales relevantes del proyecto, serán discutidas con todos los miembros del equipo dando razones a favor y en contra de tomar una determinada acción. Y, posteriormente, se someterá a votación escogiendo la opción con más votos.
 
@@ -210,7 +215,7 @@ Toda la gestión del proyecto y el control de las versiones y configuraciones se
 
 Un repositorio será exclusivamente para la documentación, que será realizada utilizando \LaTeX. Todos los miembros del equipo modificarán el repositorio siguiendo un flujo de trabajo centralizado.
 
-Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{back-end} y los otros dos al \textit{front-end}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
+Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{backend} y los otros dos al \textit{frontend}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
 
 Para el reparto de las tareas se utilizarán las \textit{issues} de \textit{GitHub}. Cada \textit{issue} representará una funcionalidad o una tarea a desarrollar. Cuando un miembro del grupo vaya a realizar una de ellas deberá asignársela y cuando la haya completado deberá cerrarla. Además, esta herramienta permite realizar comentarios para facilitar la comunicación entre los miembros del equipo.
 
@@ -219,11 +224,11 @@ Para el reparto de las tareas se utilizarán las \textit{issues} de \textit{GitH
 
 %Cómo se despliega el software más allá de las máquinas de desarrollo: contenedores, máquinas virtuales, servidor en cloud etc. y cómo se configuran esos entornos (rutas, usuarios y contraseñas, puertos y otros elementos).
 
-El \textit{back-end} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{front-end} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
+El \textit{backend} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{frontend} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
 
-Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{back-end} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
+Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{backend} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
 
-Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{back-end}. Además, deberán hacer uso de GitHub para subir los cambios que realicen.
+Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{backend}. Además, deberán hacer uso de GitHub para subir los cambios que realicen.
 
 La aplicación móvil se encontrará disponible en la tienda de aplicaciones de Android, Google Play. La aplicación web será accesible mediante una URL desde un navegador como Google Chrome. Todo el almacenamiento de información relativa a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán realizar peticiones en las rutas especificadas.
 
@@ -257,14 +262,18 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 
 %División del trabajo en partes (los módulos del software a desarrollar, pero también la documentación, el diseño gráfico, instalaciones o despliegues, pruebas manuales etc.) y reparto de los mismos entre el equipo de desarrollo, al menos a alto nivel (el reparto de labores concretas en el día a día no se detalla aquí, pero hay que explicar bajo qué criterios y quién/cómo se hace eso en la sección 3.1.2 (Procesos de ejecución y control). Debe haber una correspondencia con las tareas que aparecen en el diagrama de Gantt (que no necesariamente tiene que ser una relación uno a uno).
 	%Verificad que esta división del trabajo cubre todos los requisitos.
+Se va a realizar una planificación de los trabajos a realizar por cada equipo, que
+podrá ser modificado en caso de fallos en la planificación, retrasos o
+adelantos. En todo caso, quedaría reflejado en el diagrama de Gantt.
 
-La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
+La división de trabajos se va a realizar por equipo, \textit{frontend web},
+\textit{frontend} android y \textit{backend}. Cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
 14 de abril, para una primera prueba de integración entre \textit{frontend} y \textit{backend}.
 
 Habrá unos hitos iniciales:
 \begin{itemize}
     \item Creación repositorios. Fecha est. 21/03
-    \item Creación de scripts de despliegue automático. Fecha est. 31/03
+    \item Creación de \textit{scripts} de despliegue automático. Fecha est. 31/03
     \item Primera prueba integración. Fecha est. 10/04
 \end{itemize}
 
@@ -307,7 +316,13 @@ Las tareas de éste equipo son las siguientes:
 
 
 \paragraph{Diagrama de Gantt}
-\textbf{El diagrama de gantt se encuentra en el fichero adjunto \texttt{diagrama\_gantt.pdf}}.
+El seguimiento de estas tareas se va a realizar mediante un diagrama de Gantt,
+en el cual se reflejaran los posibles adelantos o retrasos en las tareas, así
+como las tareas imprevistas que pudiesen surgir durante la realización del
+proyecto.
+
+El diagrama de Gantt final se encuentra en el anexo \ref{anexo:Gantt}.
+
 
 \section{Análisis y diseño del sistema}
 \subsection{Análisis de requisitos}
@@ -413,7 +428,7 @@ fácilmente usando Docker.
 El sistema tiene 6 componentes principales relacionados de la siguiente manera:
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.8\textwidth]{./images/componentes_despliegue.png}
+    \includegraphics[width=0.8\textwidth]{../images/componentes_despliegue.pdf}
     \caption{Diagrama de componentes}
     \label{fig:diag_componentes}
 \end{figure}
@@ -425,7 +440,7 @@ HTTPS.
 
 \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.8\textwidth]{./images/diagrama_despliegue.png}
+    \includegraphics[width=0.8\textwidth]{../images/diagrama_despliegue.pdf}
     \caption{Diagrama de despliegue}
     \label{fig:diag_despliegue}
 \end{figure}
@@ -458,9 +473,9 @@ El desarrollo de aplicaciones Android nativo, se puede realizar mediante dos tec
     \item Kotlin
 \end{itemize}
 
-Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Android que con Kotlin, y realizar 
+Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Java que con Kotlin, y realizar 
 el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
-posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
+posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales, se realizará .
 
 \paragraph*{RESTful API} \label{REST_API}
 
@@ -488,7 +503,7 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.
 
-Actuará como proxy inverso para todos los servicios disponibles en la máquina. La conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
+Actuará como proxy inverso para todos los servicios disponibles en la máquina. Preferiblemente, la conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
 privacidad de las conexiones.
 
 \paragraph*{Base de datos}
@@ -507,7 +522,8 @@ Se ha optado por PostgreSQL porqué el equipo tiene mayor experiencia en ella y 
 
 
 \subsubsection{Mapa de navegación}
-\textbf{El mapa de navegación  con las pantallas de la aplicación se encuentra en el fichero adjunto \texttt{mapa\_navegacion.pdf}}.
+El mapa de navegación  con las pantallas de la aplicación se encuentra en el
+anexo \ref{anexo:navegacion}.
 
 %Otros aspectos técnicos de interés (p.ej. si hay base de datos si va a ser SQL o NoSQL, si hay una API Web va a ser REST[ful] o no, si algunas de las operaciones van a ser asíncronas o no, si va a ser una aplicación móvil o de escritorio será nativa o se van a usar tecnologías web, cómo se van a considerar los requisitos de seguridad o de prestaciones, cómo y dónde se harán las instalaciones y despliegues etc.)
 
@@ -654,5 +670,59 @@ Si ninguna de las parejas supera los 100 tantos en una mano se jugará una mano 
 \subsection*{Final de la partida}
 
 Gana la partida aquella pareja que antes consiga alcanzar el número de cotos pactado inicialmente, formado a su vez por tres manos/puntos.
+
+\section{Anexo: Diagrama de Gantt} \label{anexo:Gantt}
+
+\includegraphics[width=\textwidth]{../images/diagramaGantt}
+
+
+\begin{landscape}
+    \section{Anexo: Mapa de navegación} \label{anexo:navegacion}
+
+    \includegraphics[width=1.5\textwidth]{../images/mapaNavegacion}
+
+    \includegraphics[width=1.5\textwidth]{../images/mapaNavegacionAndroid}
+
+\end{landscape}
+
+\section{Anexo: Diagramas de secuencia}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../images/diagramasSecuencia/Interacción-Create&Join}
+    \caption{Crear y unirse a una partida}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../images/diagramasSecuencia/Interacción-SingleGameCreate}
+    \caption{Jugar una partida en solitario}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../images/diagramasSecuencia/Interacción-Join}
+    \caption{Unirse a una partida}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../images/diagramasSecuencia/Interacción-Pause}
+    \caption{Pausa de un juego}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../images/diagramasSecuencia/Interacción-Rejoin}
+    \caption{Retormar una partida pausada}
+\end{figure}
+
+\section{Anexo: Diagrama de estados simulación}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{../images/diagrama_estados.pdf}
+    \caption{Retormar una partida pausada}
+\end{figure}
 
 \end{document}

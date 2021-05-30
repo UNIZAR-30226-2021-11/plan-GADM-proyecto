@@ -233,25 +233,22 @@ La aplicación móvil se encontrará disponible en la tienda de aplicaciones de 
 
 %Actividades de control de calidad del código que se realizarán: revisiones de código por pares, revisiones de requisitos o diagramas UML por pares, tipos de tests automáticos o manuales que se llevarán a cabo.
 
-Pruebas de sobrecarga del servidor, para comprobar cual es la carga de trabajo y clientes que soporta el sistema desarrollado y evaluar si es suficiente o es necesario modificar la arquitectura para generar otro sistema más escalable o adquirir más recursos hardware. Esta prueba se realizará una vez esté completo el servidor y se pueda comunicar con los clientes.
-
-Pruebas de integración del API con las aplicaciones web y Android. Estas pruebas consistirán en probar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y está prevista para la primera iteración. Para ello se han utilizado las siguientes herramientas:
+Pruebas de integración de la API con las aplicaciones web y Android. Estas pruebas consistirán en asegurar que se establece la comunicación entre el servidor y los clientes y que las peticiones y respuestas son correctas. Esta prueba se debe realizar una vez finalizada la comunicación entre clientes y servidor y está prevista para la primera iteración. Para ello se han utilizado las siguientes herramientas:
 \begin{itemize}
 	\item \textit{Postman:} es una herramienta que permite realizar peticiones al API y visualizar los datos recibidos sin necesidad de crear un cliente.
-	\item \textit{Android Pofiler:} es una utilidad de android studio que permite monitorizar el tráfico de red. 
-	\item \textit{Wireshark:} es un analizador de paquetes para visualizar los datos que se envían y reciben entre el API y el \textit{front-end web}. 
+	\item \textit{Android Profiler:} es una utilidad de android studio que permite monitorizar el tráfico de red. 
+	\item \textit{Wireshark:} es un analizador de paquetes para visualizar los datos que se envían y reciben entre la API y el \textit{front-end web}. 
 \end{itemize}  
 
-Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema la pareja asignada revisará el código.
+Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema.
 
 Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a todos los requisitos especificados y no existe ningún bug, alguna secuencia de acciones que pueda ocasionar algún error en la interfaz o que exista alguna pantalla inaccesible.La prueba se realizará una vez finalizada la interfaz.
 
 Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad. En concreto:
 \begin{itemize}
 	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor (API), para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
-	\item \textbf{Pruebas de caminos:} en la parte del \textit{back-end} que se encarga de la simulación del juego.
-	\item \textbf{Pruebas unitarias:} en cada función del \textit{back-end} en la parte encargada de la simulación, utilizando la librería estándar de Goland (go test).
-	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en aquellas partes del \textit{front-end} donde tiene que interactuar el usuario insertando datos de forma manual, como por ejemplo al registrarse, iniciar sesion, buscar el perfil de algún usuario...
+	\item \textbf{Pruebas unitarias:} en cada función del \textit{back-end} en la parte encargada de la simulación, utilizando la librería estándar de Goland (go test). Estas consisten en pruebas de caminos, para garantizar que por lo menos se ejecuta una vez cada sentencia del sistema y pruebas de simulación en la que se realiza una partida real pasando por todos los estados del autómata diseñado. Estas pruebas son de gran importancia porque la simulación del juego es la parte más importante del proyecto y hay que asegurar su correcto funcionamiento.  
+	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en aquellas partes del \textit{front-end} donde tiene que interactuar el usuario insertando datos de forma manual, como por ejemplo al registrarse, iniciar sesión, buscar el perfil de algún usuario...
 \end{itemize}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
@@ -544,21 +541,23 @@ Se realizó una reunión antes de Semana Santa en la que se fijaron las bases pa
 %Funcionamiento de los procesos de control de versiones del código, construcción y despliegue. ¿Ha habido problemas con las integraciones? ¿Problemas con los despliegues? ¿Se han perdido cosas por errores humanos? ¿Cómo se han abordado estas tareas?
 %Pruebas del software. ¿Se han podido cumplir las ideas que se tenían al respecto?
 
-Durante la fase de desarrollo de la primera iteración se ha pasado de trabajar todos los miembros del grupo en conjunto a dividirnos en grupos dependiendo de la tarea a desempeñar (aplicación android, aplicación web y \textit{backend}).Cada grupo está formado por dos integrantes que se reparten el trabajo por medio de la herramienta \textit{issues} que ofrece GitHub.
+El equipo ha trabajado dividido en tres grupos, cada uno encargado de desarrollar una tarea distinta (aplicación android, aplicación web y \textit{backend}). Esta organización de trabajo ha sido correcta y aplicable para próximos proyectos, sin embargo habría que considerar aumentar la frecuencia de las reuniones de seguimiento. Durante las primeras semanas de trabajo el numero de reuniones fue insuficiente y como consecuencia se produjeron algunos errores de comunicación entre los grupos. Esta situación se soluciono las ultimas semanas reuniendo a todos los equipos con mayor frecuencia.
 
-Para la comunicación se han utilizado dos aplicaciones. Para mensajes sencillos y consultas breves se ha creado un grupo de Whatsapp para el proyecto. Para reuniones o para comunicarse con los compañeros a la hora de trabajar se ha utilizado Discord.Esta aplicación permite tener un servidor propio con varios canales de comunicación,tanto de texto como de voz, para los distintos grupos.
+Para la comunicación se han utilizado dos aplicaciones. Para mensajes sencillos y consultas breves se ha creado un grupo de Whatsapp para el proyecto. Para reuniones o para comunicarse con los compañeros a la hora de trabajar se ha utilizado Discord.Esta aplicación permite tener un servidor propio con varios canales de comunicación,tanto de texto como de voz. Con este sistema de comunicación no se ha encontrado ningún problema y sería una elección recomendable para 
 
-El progreso del proyecto se ha medido mediante el diagrama de Gantt y las \textit{issues} de GitHub. Cada \textit{issue} representa una tarea a realizar y esta debe de estar cerrada antes de que haya concluido en el diagrama. Por el momento no se han encontrado divergencias con respecto a la planificación inicial y todas las tareas que han cumplido plazo han sido implementadas.
+El progreso del proyecto se ha medido mediante el diagrama de Gantt y las \textit{issues} de GitHub. Las \textit{issues} han resultado de gran utilidad a la hora de repartir el trabajo entre los miembros del equipo. En lo referente al diagrama de Gantt si que han surgido varios problemas. En primer lugar las tareas que se incluyeron inicialmente en el diagrama eran demasiado genéricas y con poco nivel de detalle, lo que dificultaba verificar si la tarea estaba completamente terminada cuando llegaba la fecha de su finalización. Otro problema que surgió con el diagrama fue la mala planificación, teniendo que modificarlo numerosas veces a lo largo del desarrolo. A pesar de los problemas surgidos, es una herramienta de gran utilidad para desarrollar proyectos de este estilo y se debe utilizar más tiempo en las fases de organización para diseñar un buen diagrama.
 
 Las tecnologías seleccionadas inicialmente han sido las adecuadas, ya que se había trabajado con ellas previamente y no han supuesto una desventaja a la hora del desarrollo.
 
-El control de versiones se ha realizado con GitHub, porque nos ha permitido trabajar en el mismo proyecto a varias personas y juntar todo el código de forma automática (merge), salvo en algunos casos en los que se ha trabajado sobre el mismo fichero y se han producido conflictos que han sido resueltos de forma manual. Además todos los entornos de desarrollo seleccionados incluyen funcionalidades que facilitan esta tarea. 
+El control de versiones se ha realizado con GitHub, porque nos ha permitido trabajar en el mismo proyecto a varias personas y juntar todo el código de forma automática (merge), salvo en algunos casos en los que se ha trabajado sobre el mismo fichero y se han producido conflictos que han sido resueltos de forma manual. Además todos los entornos de desarrollo seleccionados incluyen funcionalidades que facilitan esta tarea. El uso de ramas ha resultado confuso al inicio, debido a que ningún miembro del equipo había trabajando con el. Pero a medida que se adquiría experiencia ha facilitado el trabajo.
+
+El despliegue mediante contenedores docker en el servidor de AWS ha sido una decisión acertada, porque permite relanzar todos los elementos con gran facilidad una vez realizados los scripts.
 
 Las primeras pruebas realizadas han sido de integración entre el servidor y los clientes, dichas pruebas han consistido en comprobar que la comunicación se produce de manera correcta y que los datos enviados y recibidos son los esperados.
 
-También se han realizado pruebas unitarias sobre todas funciones de la parte del \textit{backend} que se encarga de la funcionalidad y la lógica del juego.
+También se han realizado pruebas unitarias sobre todas funciones de la parte del \textit{backend} que se encarga de la funcionalidad y la lógica del juego. El desarrollo de las simulación duró más tiempo del esperado, porque se realizaron numerosas pruebas para asegurar el correcto funcionamiento. Esto retraso su integración con las aplicaciones reduciendo el tiempo reservado para la implementación de los torneos. Como consecuencia hubo que realizar una versión muy simplificada de los torneos que no se adapta al requisito pactado con el cliente.
 
-En la parte de \textit{frontend} se han hecho pruebas de navegación para verificar que se puede acceder a todas las pantallas tal y como se indica en el mapa de navegación.
+El resto de requisitos se han cumplido en su totalidad a excepción de la verificación por correo electrónico, que unicamente envía un correo informativo al usuario en lugar de ser esperar la confirmación de registro.
 
 %\subsection{Cierre del proyecto}
 %Al menos:

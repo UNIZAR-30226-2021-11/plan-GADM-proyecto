@@ -476,9 +476,9 @@ El desarrollo de aplicaciones Android nativo, se puede realizar mediante dos tec
     \item Kotlin
 \end{itemize}
 
-Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Android que con Kotlin, y realizar 
+Debido a que en el equipo de desarrollo se tiene mucha más experiencia con Java que con Kotlin, y realizar 
 el desarrollo con un lenguaje diferente a estos dos representa una serie de complicaciones no deseadas, 
-posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales.
+posibles incompatibilidades de llamadas, necesidad de librerías extensas y manejo de dependencias adicionales, se realizará .
 
 \paragraph*{RESTful API} \label{REST_API}
 
@@ -506,7 +506,7 @@ Como servidor web tras la elección de Golang como lenguaje para la API se nos p
 Debido a las restricciones de los plazos, se utilizará NGINX para agilizar el despliegue, debido a que permite el despliegue de diferentes servicios en la misma
 máquina física.
 
-Actuará como proxy inverso para todos los servicios disponibles en la máquina. La conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
+Actuará como proxy inverso para todos los servicios disponibles en la máquina. Preferiblemente, la conexión se realizará siempre mediante el protocolo HTTPS, para asegurar la
 privacidad de las conexiones.
 
 \paragraph*{Base de datos}

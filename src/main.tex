@@ -224,13 +224,29 @@ Para el reparto de las tareas se utilizarán las \textit{issues} de \textit{GitH
 
 %Cómo se despliega el software más allá de las máquinas de desarrollo: contenedores, máquinas virtuales, servidor en cloud etc. y cómo se configuran esos entornos (rutas, usuarios y contraseñas, puertos y otros elementos).
 
-El \textit{back-end} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{front-end} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
+El \textit{back-end} de la aplicación se encontrará desplegado dentro de un
+contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará
+situado en un servidor, ya sea de uno de los integrantes o de un proveedor de
+este tipo de servicios como AWS. El objetivo es que, los desarrolladores de
+\textit{front-end} puedan probar el correcto funcionamiento de la aplicación
+realizando peticiones a un mismo servidor.
 
-Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{back-end} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
+Este servidor se actualizará siguiendo una \emph{integración continua}.
+Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de
+\textit{back-end} provocará la ejecución de un script de construcción
+automatizada para modificar el despliegue. Esto garantiza que todos los
+participantes puedan observar el resultado al mismo tiempo que programa.
 
-Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{back-end}. Además, deberán hacer uso de GitHub para subir los cambios que realicen.
+Los computadores de los desarrolladores estarán configurados con el mismo IDE:
+Android Studio para la aplicación móvil, Visual Studio para la aplicación web, y
+GoLand para el \textit{back-end}. Además, deberán hacer uso de GitHub para subir
+los cambios que realicen.
 
-La aplicación móvil se encontrará disponible en la tienda de aplicaciones de Android, Google Play. La aplicación web será accesible mediante una URL desde un navegador como Google Chrome. Todo el almacenamiento de información relativa a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán realizar peticiones en las rutas especificadas.
+La aplicación móvil se encontrará disponible en la tienda de aplicaciones de
+Android, Google Play. La aplicación web será accesible mediante una URL desde
+un navegador como Google Chrome. Todo el almacenamiento de información relativa
+a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán
+realizar peticiones en las rutas especificadas.
 
 
 \subsubsection{Plan de aseguramiento de la calidad}
@@ -574,6 +590,11 @@ En la parte de \textit{frontend} se han hecho pruebas de navegación para verifi
 %Recopilar los esfuerzos dedicados al proyecto por cada uno de los participantes: horas trabajadas y actividades realizadas por cada persona.
 
 \appendix
+
+\section{Anexo: Actas de todas las reuniones realizadas}
+
+\includegraphics[width=\textwidth]{../images/actas/Acta_reunion_1.pdf}
+
 \section{Anexo: Reglamento del Guiñote}
 Fuente: \href{https://www.ludoteka.com/clasika/guinote.html}{Ludoteka.com}
 

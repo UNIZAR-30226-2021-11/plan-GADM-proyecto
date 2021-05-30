@@ -577,7 +577,7 @@ El resto de requisitos se han cumplido en su totalidad a excepción de la verifi
 
 \subsection{Cierre del proyecto}
 En la versión final del proyecto se han cumplido los requisitos casi en su totalidad. Los requisitos que no pudieron ser cumplidos como se pactó con el cliente son la implementación de los torneos y la verificación de registro por email. Debido a la falta de tiempo en las últimas semanas se optó por realizar una versión simplificada de los torneos y dedicar ese tiempo en realizar pruebas y tests sobre el juego que es el requisito principal del proyecto. Por esa misma razón (la falta de tiempo) se simplificó el envío del correo electrónico, siendo un correo meramente informativo de que el usuario se ha registrado. El requisito inicial consistía en enviar un enlace para que confirme el registro y se le prohíba el acceso si no lo hace.
-\subsubsection{Estimaciones iniciales}
+\subsubsection*{Estimaciones iniciales}
 En la propuesta técnica y económica inicial se presupuestaron 223 horas, con un coste promedio esperado de 4135€, lo cual a todas luces resultó ser un presupuesto excesivamente optimista.
 El resultado final ha necesitado de un total de 658 horas, con un coste de 12100€. Lo cual supone triplicar la estimación inicial. En cuanto a la oferta realizada al cliente, a pesar de tomar la estimación máxima, con un coste de 6500€,
 Se realizó una subestimación de las horas necesarias en todos los equipos. En el equipo de backend se presupuestaron un total de 94 horas, con un resultado final de 257 horas, en este caso se subestimó la cantidad de horas que requeriría la funcionalidad principal de la simulación así como la cantidad de tiempo necesario para depuración de las diferentes partes.
@@ -586,22 +586,39 @@ En el desarrollo de la web se presupuestaron un total de 40 horas, de las cuales
 En el desarrollo de la aplicación Android se presupuestaron un total de 42 horas en promedio, necesitandose finalmente un total de 140 horas para completarla. De la misma manera que en el equipo de desarrollo web, se asignaron muy pocas horas para el diseño de la interfaz.
 En el futuro se tendrán en cuenta todos estos aspectos, para poder realizar mejores presupuestos y poder hacer una estimación del capital humano y económico necesario para la realización del proyecto.
 
-En el anexo \ref{anexo:horas-trabajadas} se han recopilado los esfuerzos dedicados
+En las figuras \ref{fig:horas-presupuestadas} y \ref{fig:horas-reales}, se han
+comparado las horas iniciales presupuestadas con las dedicadas en la práctica.
+Y en el anexo \ref{anexo:horas-trabajadas} se han recopilado los esfuerzos dedicados
 al proyecto por cada uno de los participantes: horas trabajadas y actividades
 realizadas por cada persona.
 
-%TODO
-%\subsubsection*{Equipo backend}
-%El equipo de Backend se enfrentó a los siguientes problemas. Se realizó un mal diseño inicial del modelo de datos, en el que se guardaba el estado completo del juego en la Base de Datos, lo que lo hacía muy poco eficiente. En su lugar, se modificó el esquema relacional para almacenar únicamente la información relevante para la API, es decir, para la gestión de las partidas. Este problema estaba relacionado con un planteamiento inicial erróneo de la comunicación con el servidor en el que el envío del estado de la partida en juego y de los eventos se realizaba mediante peticiones HTTP de la misma manera que a la API Rest. Finalmente, por razones obvias de eficiencia se optó por utilizar para este propósito la tecnología de WebSockets. Otro de los problemas encontrados fue el excesivo tiempo dedicado al diseño de la máquina de estados de simulación del juego (aproximadamente mes y medio). Por último, debido a retrasos en el frontend web, se realizó el despliegue de la misma días antes de la entrega final.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{../images/horasEquipos/horasPresupuestadas.pdf}
+    \caption{Horas presupuestadas por equipo}
+    \label{fig:horas-presupuestadas}
 
 
-\subsubsection*{Equipo android}
-El equipo android ha aprendido a utilizar más en profundidad la herramienta de desarrollo android studio, ya que los conocimientos previos que se poseían eran muy básicos. Otro conocimiento adquirido es la conexión con un servidor por medio de JSON Web Token, muy útil a la hora de establecer un canal unidireccional y que además incluye un sistema de firma digital por medio de un token para incrementar la seguridad.
+    \includegraphics[width=0.75\textwidth]{../images/horasEquipos/horasReales.pdf}
+    \caption{Horas reales por equipo}
+    \label{fig:horas-reales}
+\end{figure}
 
+\subsubsection*{Equipo Backend}
+En el equipo backend se ha aprendido a trabajar con tecnologías web desde el punto de vista del servidor, como JSON Web Token para realizar autenticación con el servidor o websockets para permitir una comunicación dúplex con los clientes.
+También se ha tenido una aproximación a trabajar con entrega continua, mediante la creación de imágenes de contenedor Docker y el uso de los repositorios de contenedores de GitHub.
+Así mismo se ha trabajado con una arquitectura basada en bucle de eventos, para poder responder de manera secuencial a todos los eventos que mandan los clientes.
+El trabajo con diagramas de secuencia propios de ingeniería del software a probado ser una herramienta bastante útil para poder representar las comunicaciones entre diferentes elementos del sistema.
 
-\subsubsection*{Equipo web}
+\subsubsection*{Equipo Android}
+El equipo android ha aprendido a utilizar más en profundidad la herramienta de desarrollo android studio, ya que los conocimientos previos que se poseían eran muy básicos.
+Otro conocimiento consiste en la conexión con un servidor remoto mediante el empleo de JSON Web Tokens, muy útil a la hora de establecer un canal unidireccional y que además incluye un sistema de firma digital por medio de token para incrementar la seguridad de la comunicación.
+Del mismo modo, es la primera vez en la que ambos componentes han tenido que crear interfaces en XML, por lo que se trata de otra tecnología aprendida.
+
+\subsubsection*{Equipo Web}
 Los integrantes del equipo tuvieron que aprender sobre tecnologías web siguiendo extensos tutoriales, ya que sus conocimientos previos no eran válidos para implementar toda la funcionalidad que la aplicación requería. Por ello, al finalizar el proyecto se considera que se ha aprendido mucho, hasta alcanzar un nivel medio, sobre desarrollo web, especialmente en lo relativo a Javascript (mención especial para el manejo de elementos <canvas>). En concreto, lo que resultó más útil para el proyecto fue la forma de comunicación entre Frontend y Backend, es decir, lo relativo a la API Fetch y a Websockets.
 Siendo lo anterior lo más remarcable, también se han adquirido conocimientos relativos al uso de extensiones de Visual Studio Code para otorgar funcionalidad extra a un simple editor de texto.
+
 
 \section{Conclusiones}
 Ha sido un proyecto con un desenlace satisfactorio, a pesar de haber tenido que recortar funcionalidad en las secciones de torneo y verificación de la cuenta por correo, debido a múltiples problemas que provocaron retrasos en el desarrollo del proyecto. Entre otros problemas cabe destacar los problemas de comunicación en el equipo, especificación de tareas y planificación del proyecto.
@@ -668,7 +685,7 @@ Si por algún motivo vamos a cambiar alguna funcionalidad especificada en alguno
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.75\textwidth]{../images/graficos/GRACIA}
+    \includegraphics[width=0.6\textwidth]{../images/graficos/GRACIA}
     \caption{Daniel Gracia}
 \end{figure}
 

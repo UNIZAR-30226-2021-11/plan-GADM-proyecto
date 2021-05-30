@@ -576,15 +576,51 @@ También se han realizado pruebas unitarias sobre todas funciones de la parte de
 El resto de requisitos se han cumplido en su totalidad a excepción de la verificación por correo electrónico, que unicamente envía un correo informativo al usuario en lugar de ser esperar la confirmación de registro.
 
 \subsection{Cierre del proyecto}
-hola
+En la versión final del proyecto se han cumplido los requisitos casi en su totalidad. Los requisitos que no pudieron ser cumplidos como se pactó con el cliente son la implementación de los torneos y la verificación de registro por email. Debido a la falta de tiempo en las últimas semanas se optó por realizar una versión simplificada de los torneos y dedicar ese tiempo en realizar pruebas y tests sobre el juego que es el requisito principal del proyecto. Por esa misma razón (la falta de tiempo) se simplificó el envío del correo electrónico, siendo un correo meramente informativo de que el usuario se ha registrado. El requisito inicial consistía en enviar un enlace para que confirme el registro y se le prohíba el acceso si no lo hace.
+\subsubsection{Estimaciones iniciales}
+En la propuesta técnica y económica inicial se presupuestaron 223 horas, con un coste promedio esperado de 4135€, lo cual a todas luces resultó ser un presupuesto excesivamente optimista.
+El resultado final ha necesitado de un total de 658 horas, con un coste de 12100€. Lo cual supone triplicar la estimación inicial. En cuanto a la oferta realizada al cliente, a pesar de tomar la estimación máxima, con un coste de 6500€,
+Se realizó una subestimación de las horas necesarias en todos los equipos. En el equipo de backend se presupuestaron un total de 94 horas, con un resultado final de 257 horas, en este caso se subestimó la cantidad de horas que requeriría la funcionalidad principal de la simulación así como la cantidad de tiempo necesario para depuración de las diferentes partes.
 
+En el desarrollo de la web se presupuestaron un total de 40 horas, de las cuales sólamente 6 estaban dedicadas al desarrollo y diseño de la interfaz, tiempo claramente insuficiente debido a la inexistencia de experiencia entre los integrantes del proyecto en desarrollo web.
+En el desarrollo de la aplicación Android se presupuestaron un total de 42 horas en promedio, necesitandose finalmente un total de 140 horas para completarla. De la misma manera que en el equipo de desarrollo web, se asignaron muy pocas horas para el diseño de la interfaz.
+En el futuro se tendrán en cuenta todos estos aspectos, para poder realizar mejores presupuestos y poder hacer una estimación del capital humano y económico necesario para la realización del proyecto.
 
 En el anexo \ref{anexo:horas-trabajadas} se han recopilado los esfuerzos dedicados
 al proyecto por cada uno de los participantes: horas trabajadas y actividades
 realizadas por cada persona.
 
+%TODO
+%\subsubsection*{Equipo backend}
+%El equipo de Backend se enfrentó a los siguientes problemas. Se realizó un mal diseño inicial del modelo de datos, en el que se guardaba el estado completo del juego en la Base de Datos, lo que lo hacía muy poco eficiente. En su lugar, se modificó el esquema relacional para almacenar únicamente la información relevante para la API, es decir, para la gestión de las partidas. Este problema estaba relacionado con un planteamiento inicial erróneo de la comunicación con el servidor en el que el envío del estado de la partida en juego y de los eventos se realizaba mediante peticiones HTTP de la misma manera que a la API Rest. Finalmente, por razones obvias de eficiencia se optó por utilizar para este propósito la tecnología de WebSockets. Otro de los problemas encontrados fue el excesivo tiempo dedicado al diseño de la máquina de estados de simulación del juego (aproximadamente mes y medio). Por último, debido a retrasos en el frontend web, se realizó el despliegue de la misma días antes de la entrega final.
+
+
+\subsubsection*{Equipo android}
+El equipo android ha aprendido a utilizar más en profundidad la herramienta de desarrollo android studio, ya que los conocimientos previos que se poseían eran muy básicos. Otro conocimiento adquirido es la conexión con un servidor por medio de JSON Web Token, muy útil a la hora de establecer un canal unidireccional y que además incluye un sistema de firma digital por medio de un token para incrementar la seguridad.
+
+
+\subsubsection*{Equipo web}
+Los integrantes del equipo tuvieron que aprender sobre tecnologías web siguiendo extensos tutoriales, ya que sus conocimientos previos no eran válidos para implementar toda la funcionalidad que la aplicación requería. Por ello, al finalizar el proyecto se considera que se ha aprendido mucho, hasta alcanzar un nivel medio, sobre desarrollo web, especialmente en lo relativo a Javascript (mención especial para el manejo de elementos <canvas>). En concreto, lo que resultó más útil para el proyecto fue la forma de comunicación entre Frontend y Backend, es decir, lo relativo a la API Fetch y a Websockets.
+Siendo lo anterior lo más remarcable, también se han adquirido conocimientos relativos al uso de extensiones de Visual Studio Code para otorgar funcionalidad extra a un simple editor de texto.
+
 \section{Conclusiones}
-hola
+Ha sido un proyecto con un desenlace satisfactorio, a pesar de haber tenido que recortar funcionalidad en las secciones de torneo y verificación de la cuenta por correo, debido a múltiples problemas que provocaron retrasos en el desarrollo del proyecto. Entre otros problemas cabe destacar los problemas de comunicación en el equipo, especificación de tareas y planificación del proyecto.
+
+\subsubsection*{Sincronización de los grupos}
+Que trabajar en grupo es difícil no es algo nuevo para nosotros, pero nunca antes habíamos participado en un grupo tan grande. Dividir el trabajo en subgrupos vino bien para paliar esto, ya que los esfuerzos de cada uno se enfocaron en su parte.
+Sin embargo, esto no quita que haya habido ciertos problemas de comunicación. Un ejemplo claro de esto se ve con la parte de los torneos: Se definió de una forma muy laxa el cómo íbamos a realizar esta parte, y a medida que se acercaba la entrega final no supimos concretar la misma.
+
+\subsubsection*{Mala planificación}
+Se ha realizado una mala planificación para el desarrollo del sistema, reflejada fundamentalmente en que la parte fundamental de nuestro sistema, la capacidad de poder jugar al guiñote, fue relegada a las últimas semanas. En vez de esta funcionalidad crítica, se dedicaron esfuerzos a elementos como la gestión de usuarios, la navegación por menús, etc. Esto fue un grave error, dejando para el final el ‘core’ de nuestras aplicaciones nos perjudicó notablemente, obligándonos a trabajar horas extras en las últimas semanas con el objetivo de probar y verificar su funcionamiento.
+
+\subsubsection*{Empleo de sistemas de control de versiones}
+Cada uno de los grupos ha empleado Github para el control de versiones y para el trabajo colaborativo, aunque algunos con más y otros con menos rigurosidad. Sin embargo, todos concluimos en que se trata de una herramienta fundamental por las facilidades que ofrece y lo poco que cuesta empezar a emplearla. La posibilidad de hacer rollbacks, así como las facilidades para resolver conflictos son algunas de estas funcionalidades.
+
+\subsubsection*{Inversión de más tiempo en la fase de análisis y diseño}
+El tiempo invertido en las fases de análisis y diseño fue insuficiente, como consecuencia hubo que realizar constantes cambios durante la fase de desarrollo en el diagrama de arquitectura, mapa de navegación,modelo de datos y en la planificación temporal del diagrama de Gantt. Esta situación generó algunos retrasos imprevistos e inconsistencias entre los equipos que hubo que resolver en las reuniones de seguimiento.
+
+\subsubsection*{Acordar los cambios con el cliente}
+Si por algún motivo vamos a cambiar alguna funcionalidad especificada en alguno de los requisitos del sistema, siempre debe hablarse con el cliente para recibir su visto bueno. En nuestro caso un requisito fue ligeramente modificado (mostrabamos fecha de inicio de las partidas en lugar de la duración de las mismas), lo que nos penalizó por no haberlo hablado con el cliente, en este caso el profesor.
 
 
 
@@ -595,6 +631,8 @@ hola
 
 \subsection*{Reuniones de equipo}
 \includegraphics[width=\textwidth]{../images/actas/Acta_reunion_1.pdf}
+
+
 \includegraphics[width=\textwidth]{../images/actas/Acta_reunion_2.pdf}
 \includegraphics[width=\textwidth]{../images/actas/Acta_reunion_3.pdf}
 \includegraphics[width=\textwidth]{../images/actas/Acta_reunion_4.pdf}

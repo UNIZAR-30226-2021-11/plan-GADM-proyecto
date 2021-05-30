@@ -163,7 +163,7 @@ ambos se formarán por su propia cuenta, utilizando como fuente de información 
 
 Las comunicaciones internas se realizarán mediante la aplicación de mensajería instantánea WhatsApp, a través del grupo creado a tal efecto. Además, se realizarán reuniones en el \textit{slot} acordado la primera semana, en el que todos los miembros están disponibles: martes de 12:00 a 14:00 (en la hora de seminario). El contenido de estas reuniones será recogido por Mario Chavanel Moreno, que se encargará de la redacción de actas cuyo contenido incluirá las decisiones tomadas.
 
-Además, el equipo usará GitHub como herramienta de apoyo para la asignación de las tareas a realizar. El director del proyecto, Javier Herrer Torres, creará las \textit{issues} correspondientes. Además, podrá asignarla a un equipo en concreto (\textit{front-end} o \textit{back-end}) o podrán ser los propios integrantes los que se auto asignen las tareas que más les interesen.
+Además, el equipo usará GitHub como herramienta de apoyo para la asignación de las tareas a realizar. El director del proyecto, Javier Herrer Torres, creará las \textit{issues} correspondientes. Además, podrá asignarla a un equipo en concreto (\textit{frontend} o \textit{backend}) o podrán ser los propios integrantes los que se auto asignen las tareas que más les interesen.
 
 Las posibles disputas que surjan sobre, por ejemplo, aspectos funcionales relevantes del proyecto, serán discutidas con todos los miembros del equipo dando razones a favor y en contra de tomar una determinada acción. Y, posteriormente, se someterá a votación escogiendo la opción con más votos.
 
@@ -215,7 +215,7 @@ Toda la gestión del proyecto y el control de las versiones y configuraciones se
 
 Un repositorio será exclusivamente para la documentación, que será realizada utilizando \LaTeX. Todos los miembros del equipo modificarán el repositorio siguiendo un flujo de trabajo centralizado.
 
-Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{back-end} y los otros dos al \textit{front-end}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
+Los otros tres repositorios estarán dedicados al código del proyecto, un repositorio será dedicado al \textit{backend} y los otros dos al \textit{frontend}(app movil y app web). Los integrantes del equipo se han dividido en sub-grupos de dos personas y cada sub-grupo trabajará sobre su propio repositorio y será el encargado de garantizar un correcto control de las versiones. Para estos repositorios se utilizará un flujo de trabajo con ramas, de modo que para cada nueva funcionalidad que se vaya a añadir se creará una rama nueva y una vez esté completa se juntará con la rama principal.
 
 Para el reparto de las tareas se utilizarán las \textit{issues} de \textit{GitHub}. Cada \textit{issue} representará una funcionalidad o una tarea a desarrollar. Cuando un miembro del grupo vaya a realizar una de ellas deberá asignársela y cuando la haya completado deberá cerrarla. Además, esta herramienta permite realizar comentarios para facilitar la comunicación entre los miembros del equipo.
 
@@ -224,11 +224,11 @@ Para el reparto de las tareas se utilizarán las \textit{issues} de \textit{GitH
 
 %Cómo se despliega el software más allá de las máquinas de desarrollo: contenedores, máquinas virtuales, servidor en cloud etc. y cómo se configuran esos entornos (rutas, usuarios y contraseñas, puertos y otros elementos).
 
-El \textit{back-end} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{front-end} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
+El \textit{backend} de la aplicación se encontrará desplegado dentro de un contenedor de Docker, que recibirá las peticiones mediante \emph{nginx}. Estará situado en un servidor, ya sea de uno de los integrantes o de un proveedor de este tipo de servicios como AWS. El objetivo es que, los desarrolladores de \textit{frontend} puedan probar el correcto funcionamiento de la aplicación realizando peticiones a un mismo servidor.
 
-Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{back-end} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
+Este servidor se actualizará siguiendo una \emph{integración continua}. Es decir, cada \textit{commit} en la rama \textit{main} del repositorio de \textit{backend} provocará la ejecución de un script de construcción automatizada para modificar el despliegue. Esto garantiza que todos los participantes puedan observar el resultado al mismo tiempo que programa.
 
-Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{back-end}. Además, deberán hacer uso de GitHub para subir los cambios que realicen.
+Los computadores de los desarrolladores estarán configurados con el mismo IDE: Android Studio para la aplicación móvil, IntelliJ para la aplicación web, y GoLand para el \textit{backend}. Además, deberán hacer uso de GitHub para subir los cambios que realicen.
 
 La aplicación móvil se encontrará disponible en la tienda de aplicaciones de Android, Google Play. La aplicación web será accesible mediante una URL desde un navegador como Google Chrome. Todo el almacenamiento de información relativa a usuarios, contraseñas, etc. se encontrará en el servidor común al que podrán realizar peticiones en las rutas especificadas.
 
@@ -244,7 +244,7 @@ Pruebas de integración del API con las aplicaciones web y Android. Estas prueba
 \begin{itemize}
 	\item \textit{Postman:} es una herramienta que permite realizar peticiones al API y visualizar los datos recibidos sin necesidad de crear un cliente.
 	\item \textit{Android Pofiler:} es una utilidad de android studio que permite monitorizar el tráfico de red. 
-	\item \textit{Wireshark:} es un analizador de paquetes para visualizar los datos que se envían y reciben entre el API y el \textit{front-end web}. 
+	\item \textit{Wireshark:} es un analizador de paquetes para visualizar los datos que se envían y reciben entre el API y el \textit{frontend web}. 
 \end{itemize}  
 
 Inspección de código para evitar posibles errores que no ha detectado el compilador o se pueden producir en tiempo de ejecución. Estas revisiones se realizarán por parejas, cuando se añada una funcionalidad nueva al sistema la pareja asignada revisará el código.
@@ -254,9 +254,9 @@ Pruebas de usabilidad de las interfaces, para verificar que se puede acceder a t
 Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema. Estas pruebas se realizarán a lo largo de toda la fase de desarrollo cada vez que se termine de implementar un requisito o una nueva funcionalidad. En concreto:
 \begin{itemize}
 	\item \textbf{Particiones de equivalencia:} en las funciones que se encarguen de comunicarse con el servidor (API), para verificar que los datos enviados y recibidos son los correctos y comprobar que sucede en caso de un mensaje invalido.
-	\item \textbf{Pruebas de caminos:} en la parte del \textit{back-end} que se encarga de la simulación del juego.
-	\item \textbf{Pruebas unitarias:} en cada función del \textit{back-end} en la parte encargada de la simulación, utilizando la librería estándar de Goland (go test).
-	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en aquellas partes del \textit{front-end} donde tiene que interactuar el usuario insertando datos de forma manual, como por ejemplo al registrarse, iniciar sesion, buscar el perfil de algún usuario...
+	\item \textbf{Pruebas de caminos:} en la parte del \textit{backend} que se encarga de la simulación del juego.
+	\item \textbf{Pruebas unitarias:} en cada función del \textit{backend} en la parte encargada de la simulación, utilizando la librería estándar de Goland (go test).
+	\item \textbf{Prueba de valores límite, valores típicos de error y valores imposibles:} en aquellas partes del \textit{frontend} donde tiene que interactuar el usuario insertando datos de forma manual, como por ejemplo al registrarse, iniciar sesión, buscar el perfil de algún usuario...
 \end{itemize}
 
 \subsubsection{Calendario del proyecto y división del trabajo}
@@ -265,14 +265,18 @@ Pruebas de funcionamiento para cada nuevo requisito que se realice en el sistema
 
 %División del trabajo en partes (los módulos del software a desarrollar, pero también la documentación, el diseño gráfico, instalaciones o despliegues, pruebas manuales etc.) y reparto de los mismos entre el equipo de desarrollo, al menos a alto nivel (el reparto de labores concretas en el día a día no se detalla aquí, pero hay que explicar bajo qué criterios y quién/cómo se hace eso en la sección 3.1.2 (Procesos de ejecución y control). Debe haber una correspondencia con las tareas que aparecen en el diagrama de Gantt (que no necesariamente tiene que ser una relación uno a uno).
 	%Verificad que esta división del trabajo cubre todos los requisitos.
+Se va a realizar una planificación de los trabajos a realizar por cada equipo, que
+podrá ser modificado en caso de fallos en la planificación, retrasos o
+adelantos. En todo caso, quedaría reflejado en el diagrama de Gantt.
 
-La división del trabajos se va a realizar en 3 equipos y cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
+La división de trabajos se va a realizar por equipo, \textit{frontend web},
+\textit{frontend} android y \textit{backend}. Cada equipo tendrá su propio calendario interno, coincidiendo en 2 fechas clave:
 14 de abril, para una primera prueba de integración entre \textit{frontend} y \textit{backend}.
 
 Habrá unos hitos iniciales:
 \begin{itemize}
     \item Creación repositorios. Fecha est. 21/03
-    \item Creación de scripts de despliegue automático. Fecha est. 31/03
+    \item Creación de \textit{scripts} de despliegue automático. Fecha est. 31/03
     \item Primera prueba integración. Fecha est. 10/04
 \end{itemize}
 
